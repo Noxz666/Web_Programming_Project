@@ -6,7 +6,7 @@ body {
     line-height: 1.4em;
     margin: 0px; 
     background-attachment: fixed;
-    background-image: url("https://cdn.discordapp.com/attachments/927807364835455027/930769296349626388/wp6144011-lego-minecraft-wallpapers.png");
+    background-image: url("https://cdn.discordapp.com/attachments/874612979549736983/930869688253181962/wallpaperflare.com_wallpaper.jpg");
 }
 .wrapper {
     width: 940px;
@@ -18,7 +18,7 @@ body {
 
 header {
     height: 160px;
-    background-image: url("https://cdn.discordapp.com/attachments/874612979549736983/930491187729686538/wp4608215-minecraft-pro-design-wallpapers.png");
+    background-image: url("https://cdn.discordapp.com/attachments/874612979549736983/930872229460320306/wallpaperflare.png");
     width: 100%;
     box-shadow: 0px 6px;
 }
@@ -232,7 +232,7 @@ aside h2 {
     width: 20px;
     height: 20px;
     overflow: hidden;
-    background: linear-gradient(45deg, #9bff49, #20ff6a, #2bdab4, #ffffff);
+    background: linear-gradient(45deg, #d4b91c, #bd431e, #e08d11, #ffffff);
 	background-size: 400% 400%;
     animation: animate 25s linear infinite;
     bottom: -100px;
