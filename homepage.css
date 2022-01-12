@@ -1,0 +1,166 @@
+body {
+    color: #666666;
+    background-color: #f9f8f6;
+    background-image: url("https://cdn.discordapp.com/attachments/927807364835455027/930769296349626388/wp6144011-lego-minecraft-wallpapers.png");
+    background-size: cover;
+    font-family: Georgia, Times, sans-serif;
+    line-height: 1.4em;
+    margin: 0px; 
+    background-attachment: fixed;
+    
+}
+.wrapper {
+    width: 940px;
+    margin: 20px auto 20px auto;
+    border: 0px solid #000000;
+    background-color: #ffffff;
+    opacity: 90%;
+}
+
+header {
+    height: 160px;
+    background-image: url("https://cdn.discordapp.com/attachments/874612979549736983/930491187729686538/wp4608215-minecraft-pro-design-wallpapers.png");
+    width: 100%;
+    box-shadow: 0px 6px;
+}
+h1 {
+    text-indent: -9999px;
+    width: 940px;
+    height: 130px;
+    margin: 0px;
+}
+.nav, footer {
+    clear: both;
+    color: #ffffff;
+    background-color: #333333;
+    height: 30px;
+    text-decoration: none;
+    font-size: 15px;
+    text-align: center;
+
+}
+.nav .ul {
+    margin:  opx;
+    padding:  5px 0px 10px 0px;
+}
+.nav .li {
+    display: inline;
+    margin-right: 15px;
+    margin-left: 19px;
+}
+.nav .li a {
+    color: #ffffff;
+    padding: 7px 10px 5px 10px;
+}
+.nav .li a:hover {
+    color: #333333;
+    background-color: #64cc33;
+    text-shadow: 3px 1px 6px darkgreen;
+
+}
+.nav .li a.current {
+    color: #333333;
+    text-shadow: 3px 1px 6px darkgreen;
+    background-color: #64cc33;
+}
+section.courses {
+    float:  left;
+    width: 659px;
+    border-right: 0px solid #eeeeee;
+}
+article {
+    clear: both;
+    overflow: auto;
+    width: 100%;
+}
+hgroup {
+    margin-top: 40px;
+}
+figure {
+    float: left;
+    width: 290px;
+    height: 190px;
+    padding: 5px;
+    margin: 20px;
+    border: 0px solid #eeeeee;
+
+}
+figcaption {
+    font-size: 100%;
+    text-align: center;
+}
+aside {
+    width: 230px;
+    float: left;
+    padding: 0px 0px 0px 20px;
+}
+aside section a {
+    display: block;
+    padding: 10px;
+    border-bottom: 1px solid #eeeeee;
+}
+aside section a:hover {
+    color: #985d6a;
+    background-color: #efefef;
+}
+a {
+    color: #de6581;
+    text-decoration: #efefef;
+}
+h1, h2, h3 {
+    font-weight: normal;
+}
+h2 {
+    margin: 10px 0px 10px 0px;
+    padding: 0px;
+}
+h3 {
+    margin: 0px 0px 10px 0px;
+    color: #de6581;
+}
+aside h2 {
+    padding: 30px 0px 10px 0px;
+    color: #de6581;
+}
+footer {
+    font-size: 80%;
+}
+.dropdown {
+    float: left;
+    margin-left: 30px;
+    margin-right: -10px;
+}
+.dropdown .dropbtn {
+    font-size: 16px;  
+    color: white;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0px;
+}
+.dropdown:hover .dropbtn {
+    background-color: #64cc33;
+    padding: 7px 0px 7px 0px;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin: 2px 19px;
+}
+.dropdown-content a {
+    float: center;
+    color: black;
+    right: auto;
+    padding: 7px 8px;
+    display: block;
+    text-align: left;
+}
+.dropdown-content a:hover ,.dropbtn{
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
