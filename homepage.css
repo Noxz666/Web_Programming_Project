@@ -133,7 +133,7 @@ aside h2 {
 	animation: gradient 15s ease infinite;
     height: 100%;
     display: inline;
-    margin-left: 30px;
+    margin-left: 25px;
 }
 .navbar .li a {
     color: #ffffff;
@@ -148,11 +148,18 @@ aside h2 {
 .navbar a.current {
     color: #ffffff;
     background-color: #ffffff77;
+    margin-left: 25px;
 }
 
 .li .dropdown {
     float: left;
     overflow: hidden;
+}
+
+.dropdown .current {
+    float: left;
+    overflow: hidden;
+    margin-left: 25px;
 }
 
 .li .dropdown .dropbtn {
@@ -173,7 +180,7 @@ aside h2 {
     min-width: 160px;
     z-index: 1;
     margin-top: 34.5px;
-    margin-left: 30px;
+    margin-left: 25px;
 }
 
 .li .dropdown-content a {
