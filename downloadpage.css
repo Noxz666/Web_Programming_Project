@@ -4,32 +4,8 @@
 .rel, h2, h2 strong, .cards .card, .news .card, .news .article {
   position: relative;
 }
-.fix {
-  position: fixed;
-}
-.dfix {
-  display: inline;
-}
-.dib {
-  display: inline-block;
-}
-.db {
-  display: block;
-}
-.dn {
-  display: none;
-}
 .df, .cards, .news {
   display: flex;
-}
-.dif {
-  display: inline-flex;
-}
-.dg {
-  display: grid;
-}
-.dig {
-  display: inline-grid;
 }
 .vm, h2, h2 strong, h2 span {
   vertical-align: middle;
@@ -44,24 +20,22 @@ h2 strong {
   color: #333333;
   background-color: #ffffff
 }
-h2 span {
-  font-size: 15px;
-  color: #aaa;
-  margin-left: 10px;
-}
 .cards{
   flex-flow: row wrap;
   margin-left: 80px;
-  margin-top: 0px;
+  margin-right: 90px;
+  margin-top: 20px;
   row-gap: 1rem;
   column-gap: 0.2rem;
   margin-bottom: 20px;
+  cursor: pointer;
 }
 .news{
   flex-flow: row wrap;
   margin-left: 30px;
+  cursor: pointer;
 }
-.cards .card, .news .card {
+.cards > .card {
   margin: 10px;
   width: 170px;
   height: 290px;
@@ -71,6 +45,7 @@ h2 span {
   transform-style: preserve-3d;
   transform: translateZ(0);
   transition: 0.3s;
+  border-radius: 12px;
 }
 .cards .card img, .news .card img {
   width: 100%;
@@ -91,12 +66,12 @@ h2 span {
   transform: translateY(100%);
   transition: 0.3s;
 }
-.cards .card:after, .news .card:after {
+.cards .card:after {
   content: '';
   z-index: 10;
   width: 200%;
   height: 100%;
-  top: -90%;
+  top: -80%;
   left: -20px;
   opacity: 0.1;
   transform: rotate(45deg);
@@ -114,13 +89,18 @@ h2 span {
   transform: rotate(25deg);
   top: -40%;
   opacity: 0.15;
-}
+} /* Reflection */
 .news .article {
   overflow: hidden;
   width: 400px;
   height: 250px;
   margin-bottom: 10px;
   box-shadow: -3px 3px 4px rgba(0,0,0,0.5);
+  border-radius: 12px;
+  transition: 0.3s;
+}
+.news .article:hover {
+  transform: scale(1.02);
 }
 .news .article img {
   width: 100%;
@@ -211,7 +191,6 @@ article {
   overflow: auto;
   width: 100%;
   margin-top: 40px;
-  margin-bottom: 40px;
 }
 hgroup {
   margin-top: 40px;
