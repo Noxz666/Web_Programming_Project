@@ -51,16 +51,18 @@ article {
     clear: both;
     overflow: auto;
     width: 100%;
+    margin-bottom: -20px;
 }
 hgroup {
-    margin-top: 40px;
+    margin-top: 30px;
 }
 figure {
     float: left;
     width: 290px;
     height: 190px;
     padding: 5px;
-    margin: 20px;
+    margin-left: 20px;
+    margin-top: 20px;
     border: 0px solid #eeeeee;
 
 }
@@ -72,6 +74,8 @@ aside {
     width: 230px;
     float: left;
     padding: 0px 0px 0px 20px;
+    margin-top: -10px;
+
 }
 aside section a {
     display: block;
@@ -100,6 +104,12 @@ h3 {
 aside h2 {
     padding: 30px 0px 10px 0px;
     color: #de6581;
+}
+aside h2:hover {
+    padding: 30px 0px 10px 0px;
+    color: #ff2f2f;
+    text-shadow: #7575755e 2px 2px 3px;
+    cursor: pointer;
 }
 .navbar {
     overflow: hidden;
@@ -328,3 +338,53 @@ aside h2 {
     }
 
 }
+
+.cards-list {
+    z-index: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    width: 290px;
+    height: 170px;
+    border-radius: 12px;
+    box-shadow: 3px 3px 15px 7px rgba(0, 0, 0, 0.123);
+    cursor: pointer;
+    transition: 0.4s;
+    
+  }
+  
+  .card .card_image {
+    width: inherit;
+    height: inherit;
+    border-radius: 12px;
+  }
+  
+  .card .card_image img {
+    width: inherit;
+    height: inherit;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+  .card:hover {
+    transform: scale(0.95, 0.95);
+    box-shadow: 5px 5px 15px 15px rgba(0,0,0,0.25);
+  }
+
+  .title-white {
+    color: white;
+  }
+  
+  .title-black {
+    color: black;
+  }
+  
+  @media all and (max-width: 500px) {
+    .card-list {
+      /* On small screens, we are no longer using row direction but column */
+      flex-direction: column;
+    }
+  }
