@@ -43,10 +43,74 @@ footer {
 }
 
 section.courses {
+    font-family: sans-serif;
+    background-color: #1F1F1F;
     float:  left;
     width: 940px;
     border-right: 0px solid #eeeeee;
 }
+
+.abandonallhope {
+    color: #fff;
+    font-style: italic;
+}
+
+.loginbox {
+    margin: 0;
+    justify-content: center;
+    text-align: center;
+}
+
+input {
+    margin-bottom: 0.5px;
+    border: none;
+    background-color: #4D4D4D;
+    padding: 10px;
+    width: 280px;
+    height: 35px;
+}
+
+
+
+button {
+    color: white;
+    font-size: 16.8px;
+    font-weight: 700;
+    margin: 15px 0px 5px; 
+    background-color: #ED2553;
+    border: none;
+    border-radius: 3px;
+    padding: 1px 6px;
+    width: 296px;
+    height: 50px;
+}
+
+button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.register, .reset {
+    font-size: 0.875em;
+    font-weight: lighter;
+    margin-top: none;
+    row-gap: 100px;
+    text-align: center;
+    color: white;
+}
+
+
+
+.belowlogin {
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+.belowloginlink {
+    color: white;
+    font-weight: bold;
+}
+
 article {
     clear: both;
     height: 1000px;
