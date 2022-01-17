@@ -65,6 +65,7 @@ input {
     font-family: "Noto Sans", sans-serif;
     font-size: 14px;
     border: none;
+    outline: none;
     width: 280px;
     height: 35px;
     padding: 10px;
