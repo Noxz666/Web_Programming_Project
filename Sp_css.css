@@ -1,0 +1,59 @@
+/* Dragon's part job Seraching box */	
+
+/*Searching Box position setting*/
+.wrapper .box{
+    /* position: relative;  		
+    bottom: 30px;
+    left: 90px ;
+    transform: translate(-50%,-50%); */
+    
+    position: absolute;
+    bottom: 40%;
+    left: 50%;
+    /* transform-origin */
+    transform: translate(-50%,-50%);
+     
+}
+/*Box property setting*/
+.wrapper .input {
+    /* Size and colour Before Click */
+    padding: 10px;
+    width: 60px;
+    height: 60px;
+    background-image: linear-gradient(45deg, rgba(117, 235, 39, 0.925), rgb(221, 95, 11));;
+    animation: gradient 15s ease infinite;
+    border: 4px solid #099204;
+    border-radius: 30px;
+    box-sizing: border-box;
+    font-family: Comic Sans MS;
+    font-size: 35px;
+    color: #000000;
+    outline: none;
+    transition: .5s;		
+}
+/*Box property setting*/	
+.wrapper .box:hover input{
+    /* Size and colour Before Click After click*/
+    width: 600px;
+    background-image: linear-gradient(90deg,rgb(221, 95, 11),rgba(117, 235, 39, 0.925));;
+    opacity: 90%;
+    border-radius: 5px;		
+}	
+/* Icon position setting */
+.wrapper icon {		
+    position: absolute; 
+    /*Madness in perfection of center's circle*/
+    top: 15px;
+    right: 21.5%; 		
+    transition: .2s; 			  		
+}
+/* When Click Icon will disaper */
+.wrapper .box:hover icon{
+    opacity: 0;
+    z-index: -1;		
+}
+Center{
+    text-align: center;
+    margin-top: 50px;
+}
+
