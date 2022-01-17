@@ -1,19 +1,19 @@
 /* Dragon's part job Seraching box */	
 
 /*Searching Box position setting*/
-.wrapper .box{
-    /* position: relative;  		
-    bottom: 30px;
-    left: 90px ;
-    transform: translate(-50%,-50%); */
-    
+.wrapper .box {
+    /* position: relative;          
+      bottom: 30px;
+      left: 90px ;
+      transform: translate(-50%,-50%); */
+  
     position: absolute;
-    bottom: 40%;
+    /* bottom: 40%; */
     left: 50%;
     /* transform-origin */
-    transform: translate(-50%,-50%);
-     
-}
+    float: center;
+    transform: translate(-50%, -50%);
+  }
 /*Box property setting*/
 .wrapper .input {
     /* Size and colour Before Click */
