@@ -121,8 +121,8 @@ hgroup {
     margin-top: 40px;
 }
 figure {
-    float: left;
-    width: 290px;
+    align-content: center;
+    width: 900px;
     height: 190px;
     padding: 5px;
     margin: 20px;
