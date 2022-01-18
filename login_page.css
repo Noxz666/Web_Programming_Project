@@ -2,7 +2,7 @@ body {
     color: #666666;
     background-color: #f9f8f6;
     background-size: cover;
-    font-family: Georgia, Times, sans-serif;
+    font-family: Georgia, Times, "Noto Sans", sans-serif;
     line-height: 1.4em;
     margin: 0px; 
     background-attachment: fixed;
@@ -43,7 +43,7 @@ footer {
 }
 
 section.courses {
-    font-family: sans-serif;
+    font-family: "Noto Sans", sans-serif;
     background-color: #1F1F1F;
     float:  left;
     width: 940px;
@@ -51,30 +51,46 @@ section.courses {
 }
 
 .abandonallhope {
-    color: #fff;
+    font-size: 15px;
+    color: #ffffff;
     font-style: italic;
 }
 
 .loginbox {
     margin: 0;
-    justify-content: center;
     text-align: center;
 }
 
 input {
-    font-size: 15px;
-    margin-bottom: 0.5px;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 14px;
     border: none;
-    background-color: #4D4D4D;
-    padding: 10px;
+    outline: none;
     width: 280px;
     height: 35px;
+    padding: 10px;
+    background-color: #4D4D4D;
 }
 
+.input:first-of-type input {
+    margin: auto;
+    margin-bottom: 0.3px;
+    background-color: #4D4D4D;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
 
+.input:not(:first-of-type) input {
+    margin: auto;
+    margin-top: 0.3px;
+    background-color: #4D4D4D;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
 
 button {
     color: white;
+    font-family: "Noto Sans", sans-serif;
     font-size: 16.8px;
     font-weight: 700;
     margin: 15px 0px 5px; 
@@ -82,7 +98,7 @@ button {
     border: none;
     border-radius: 3px;
     padding: 1px 6px;
-    width: 296px;
+    width: 299px;
     height: 50px;
 }
 
@@ -100,7 +116,9 @@ button:hover {
     color: white;
 }
 
-
+.register a:hover, .reset a:hover {
+    color: #ED2553;
+}
 
 .belowlogin {
     justify-content: center;
@@ -127,6 +145,7 @@ figure {
     height: 190px;
     padding: 5px;
     margin: 20px;
+    margin-bottom: 150px;
     border: 0px solid #eeeeee;
 
 }
