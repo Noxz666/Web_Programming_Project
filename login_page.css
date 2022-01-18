@@ -62,6 +62,7 @@ section.courses {
 }
 
 input {
+    font-size: 15px;
     margin-bottom: 0.5px;
     border: none;
     background-color: #4D4D4D;
