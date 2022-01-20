@@ -1,12 +1,271 @@
+/*Thank fo james template*/
+body {
+    color: #666666;
+    background-color: #f9f8f6;
+    background-size: cover;
+    font-family: Georgia, Times, sans-serif;
+    line-height: 1.4em;
+    margin: 0px; 
+    background-attachment: fixed;
+    background-image: url("https://cdn.discordapp.com/attachments/927807364835455027/930769296349626388/wp6144011-lego-minecraft-wallpapers.png");
+}
+.wrapper {
+    width: 940px;
+    margin: 20px auto 20px auto;
+    border: 0px solid #000000;
+    background-color: #ffffff;
+    opacity: 100%;
+}
+
+header {
+    height: 160px;
+    background-image: url("https://cdn.discordapp.com/attachments/874612979549736983/930491187729686538/wp4608215-minecraft-pro-design-wallpapers.png");
+    width: 100%;
+    box-shadow: 0px 6px;
+}
+h1 {
+    text-indent: -9999px;
+    width: 940px;
+    height: 130px;
+    margin: 0px;
+}
+footer {
+    clear: both;
+    color: #ffffff;
+    overflow: hidden;
+    background: linear-gradient(45deg, #424242, #161616, #979797, #666666);
+	background-size: 200% 200%;
+	animation: gradient 15s ease infinite;
+    height: 100%;
+    text-decoration: none;
+    font-size: 15px;
+    text-align: center;
+
+}
+
+section.courses {
+    float:  left;
+    width: 659px;
+    border-right: 0px solid #eeeeee;
+}
+article {
+    clear: both;
+    overflow: auto;
+    width: 100%;
+    margin-bottom: -20px;
+}
+hgroup {
+    margin-top: 30px;
+}
+figure {
+    float: left;
+    width: 290px;
+    height: 190px;
+    padding: 5px;
+    margin-left: 20px;
+    margin-top: 20px;
+    border: 0px solid #eeeeee;
+
+}
+figcaption {
+    font-size: 100%;
+    text-align: center;
+}
+aside {
+    width: 230px;
+    float: left;
+    padding: 0px 0px 0px 20px;
+    margin-top: -10px;
+
+}
+aside section a {
+    display: block;
+    padding: 10px;
+    border-bottom: 1px solid #eeeeee;
+}
+aside section a:hover {
+    color: #985d6a;
+    background-color: #efefef;
+}
+a {
+    color: #de6581;
+    text-decoration: #efefef;
+}
+h1, h2, h3 {
+    font-weight: normal;
+}
+h2 {
+    margin: 10px 0px 10px 0px;
+    padding: 0px;
+}
+h3 {
+    margin: 0px 0px 10px 0px;
+    color: #de6581;
+}
+aside h2 {
+    padding: 30px 0px 10px 0px;
+    color: #de6581;
+}
+aside h2:hover {
+    padding: 30px 0px 10px 0px;
+    color: #ff2f2f;
+    text-shadow: #7575755e 2px 2px 3px;
+    cursor: pointer;
+}
+.navbar {
+    overflow: hidden;
+    background: linear-gradient(45deg, #424242, #161616, #979797, #666666);
+	background-size: 200% 200%;
+	animation: gradient 15s ease infinite;
+    height: 100%;
+
+}
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    animation: gradient 15s ease infinite;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: #64cc33;
+}
+.navbar .current{
+    background-color: #64cc33;
+}
+.navbar .ul {
+    margin-left: 30px;
+}
+.navbar .li{
+	background-size: 200% 200%;
+	animation: gradient 15s ease infinite;
+    height: 100%;
+    display: inline;
+    margin-left: 25px;
+}
+.navbar .li a {
+    color: #ffffff;
+    padding: 7px 10px 5px 10px;
+}
+.navbar a:hover {
+    color: #ffffff;
+    background-color: #ffffff77;
+    text-shadow: 2px 1px 3px rgba(0, 0, 0, 0.452);
+
+}
+.navbar a.current {
+    color: #ffffff;
+    background-color: #ffffff77;
+    margin-left: 25px;
+}
+
+.li .dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .current {
+    float: left;
+    overflow: hidden;
+    margin-left: 25px;
+}
+
+.li .dropdown .dropbtn {
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 1;
+    margin-top: 34.5px;
+    margin-left: 25px;
+}
+
+.li .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(224, 224, 224, 0.651);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.cards-list {
+    z-index: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    width: 290px;
+    height: 170px;
+    border-radius: 12px;
+    box-shadow: 3px 3px 15px 7px rgba(0, 0, 0, 0.123);
+    cursor: pointer;
+    transition: 0.4s;
+    
+  }
+  
+  .card .card_image {
+    width: inherit;
+    height: inherit;
+    border-radius: 12px;
+  }
+  
+  .card .card_image img {
+    width: inherit;
+    height: inherit;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+  .card:hover {
+    transform: scale(0.95, 0.95);
+    box-shadow: 5px 5px 15px 15px rgba(0,0,0,0.25);
+  }
+
+  .title-white {
+    color: white;
+  }
+  
+  .title-black {
+    color: black;
+  }
+  
+  @media all and (max-width: 500px) {
+    .card-list {
+      /* On small screens, we are no longer using row direction but column */
+      flex-direction: column;
+    }
+  }
+
 /* Dragon's part job Seraching box */	
 
 /*Searching Box position setting*/
 .wrapper .box {
-    /* position: relative;          
-      bottom: 30px;
-      left: 90px ;
-      transform: translate(-50%,-50%); */
-  
+    /* position: relative;*/
     position: absolute;
     /* bottom: 40%; */
     left: 50%;
@@ -29,7 +288,8 @@
     font-size: 35px;
     color: #000000;
     outline: none;
-    transition: .5s;		
+    transition: .5s;    
+
 }
 /*Box property setting*/	
 .wrapper .box:hover input{
@@ -56,4 +316,14 @@ Center{
     text-align: center;
     margin-top: 50px;
 }
+
+Box-Context{
+    background-image: linear-gradient(45deg, rgba(117, 235, 39, 0.925), rgb(221, 95, 11));;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+}
+
+
 
