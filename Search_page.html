@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Project1 Homepage</title>	
+	<link rel="stylesheet" href="Sp_css.css">
+	<link rel="stylesheet" href="Sp_css_result.css">
+	<style type="text/css">
+		header, section, footer, aside, nav, article, figure, figcaption {
+			display: block; 
+	}
+	</style>
+	
+</head>
+
+<body>	
+	<!-- .wrapper คือ กระดาษลองพื้นขาว ๆ-->
+	<!-- nav ul คือ แถบสีเท่าเข้มตรง navigation bar-->
+	<div class="wrapper">
+		<header>
+			<h1>Yoko's Kitchen</h1>
+		</header>
+		<div class="navbar">
+			<div class="ul">
+				<div class="li">
+					<a class="current" href="homepage.html">Home</a>
+					<a class="li" href="#news">Download</a>
+					<a class="li" href="#news">Shops</a>
+					<div class="dropdown">
+						<a class="li" class="dropbtn" href="">About us</a>
+						<div class="dropdown-content">
+							<a href="aboutus.html">Team Members</a>
+							<a href="#">Game Introduction</a>
+							<a href="#">Contact Us</a>
+						</div> 
+					</div> 
+					<a class="li" href="#news">Search</a>
+					<a class="li" href="#news" style="margin-left: 13em">Log in</a>
+					<a class="li" href="#news">Sign up</a>
+				</div>
+			</div>
+		  </div>		
+
+		<section class="courses">			
+			<article>					
+				<Center>
+					<h2>How can we help?</h2>						
+				</Center>
+				<br><br><br>
+				<div class="box">
+					<div name="search">
+						<input type="text" class="input" name="txt" placeholder="    Enter to submit" 
+						id="Find" onmouseout="ClearText()">
+					</div>
+					<icon > 
+						<img src="https://cdn.discordapp.com/attachments/917582730982723625/930743559936675870/480px-Magnifying_glass_icon.svg.png"
+						width=30px;	height=30px; >
+					</icon>													
+				</div>	
+				<!-- Hidden Button doesn't effect on CSS-Page-->
+				<button id="Work" onclick="toggle_Result()" hidden>Button</button>			
+				
+				<div class="container" id="Result" style="visibility:hidden;">
+					<h2>Search Result</h2>
+					<div class="content">					  
+					  <h2>Test and this should be Search result</h2>
+					</div>
+					<div class="curtain"></div>
+				</div>
+
+			</article>
+		</section>	
+		
+		
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>			
+		<footer>
+			&copy; Last Updated: 20-Jan-2022 at 4:38 PM
+		</footer>
+	</div><!-- .wrapper -->
+	</body>
+
+<script>
+
+	//Toggle
+	function toggle_Result()	
+	{		
+		console.log("Test");
+		if (document.getElementById('Result').style.visibility === 'hidden') 
+		{
+			document.getElementById('Result').style.visibility = 'visible';
+		}
+		else 
+		{
+			document.getElementById('Result').style.visibility = 'hidden';
+		}
+	}
+
+	function ClearText() {
+		
+		document.getElementById("Find").value = ' '
+		document.getElementById("Find").ariaPlaceholder= '    Enter to submit'
+	}
+
+	//Full Function Triger When Enter
+	var input = document.getElementById("Find");
+	var x = document.getElementById('Result');
+	
+	//For Futer working
+	var Result;
+	input.addEventListener("keyup", function(event) 
+	{
+		if (event.keyCode === 13) 
+		{
+			Result = document.getElementById("Find").value;
+			event.preventDefault();			
+			document.getElementById("Work").click();
+			console.log("Test INVB");
+			alert(Result);		
+		}
+	});
+
+	
+
+</script>
+</html>
