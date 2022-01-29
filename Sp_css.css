@@ -1,265 +1,354 @@
 /*Thank fo james template*/
+h2:after, .card figcaption, .card:after, .news .article figcaption {
+    position: absolute;
+}   
+h2, h2 strong, .card, .news .article {
+  position: relative;
+}
+.cards, .news {
+  display: flex;
+}
+h2 strong {
+  z-index: 2;
+  background: none;
+  padding: 4px 8px;
+  margin-left: 80px;
+  font-size: 35px;
+  font-family: 'Segoe UI';
+  color: #333333;
+  background-color: #ffffff
+}
+.cards{
+  flex-flow: row wrap;
+  justify-content: center;
+  margin-top: 20px;
+  row-gap: 1rem;
+  column-gap: 0.2rem;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.news{
+  flex-flow: row wrap;
+  justify-content: center;
+  cursor: pointer;
+}
+.card {
+  margin: 10px;
+  width: 170px;
+  height: 290px;
+  overflow: hidden;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.8);
+  transform-origin: center top;
+  transform-style: preserve-3d;
+  transform: translateZ(0);
+  transition: 0.3s;
+  border-radius: 12px;
+}
+.card img{
+  width: 100%;
+  min-height: 100%;
+}
+.card figcaption{
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  padding-bottom: 10px;
+  font-size: 18px;
+  font-family: 'Segoe UI';
+  font-weight: 600;
+  background: none;
+  color: #fff;
+  transform: translateY(100%);
+  transition: 0.3s;
+}
+.card:after {
+  content: '';
+  z-index: 10;
+  width: 200%;
+  height: 100%;
+  top: -80%;
+  left: -20px;
+  opacity: 0.1;
+  transform: rotate(45deg);
+  background: linear-gradient(to top, transparent, #fff 15%, rgba(255,255,255,0.5));
+  transition: 0.3s;
+}
+.card:hover {
+  box-shadow: 0 8px 16px 3px rgba(0,0,0,0.6);
+  transform: translateY(-3px) scale(1.06) rotateX(15deg);
+}
+.card:hover figcaption {
+  transform: none;
+  text-shadow: rgb(0, 0, 0) 1px 1px 2px;
+}
+.card:hover:after {
+  transform: rotate(25deg);
+  top: -40%;
+  opacity: 0.15;
+} /* Reflection */
+.news .article {
+  overflow: hidden;
+  width: 400px;
+  height: 250px;
+  margin-bottom: 10px;
+  box-shadow: -3px 3px 4px rgba(0,0,0,0.5);
+  border-radius: 12px;
+  transition: 0.3s;
+}
+.article:hover {
+  transform: scale(1.02);
+}
+.article img {
+  width: 100%;
+  min-height: 100%;
+  transition: 0.2s;
+}
+.article figcaption {
+  font-size: 14px;
+  text-shadow: 0 1px 0 rgba(51,51,51,0.3);
+  color: #fff;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 40px;
+  box-shadow: 0 0 2px rgba(0,0,0,0.2);
+  background: rgba(6,18,53,0.6);
+  opacity: 0;
+  transform: scale(1.15);
+  transition: 0.2s;
+}
+.article figcaption h3 {
+  color: #65b7ff;
+  font-size: 18px;
+  margin-bottom: 0;
+  font-weight: bold;
+}
+.article:hover img {
+  filter: blur(10px);
+  transform: scale(0.97);
+}
+.article:hover figcaption {
+  opacity: 1;
+  transform: none;
+}
 body {
-    color: #666666;
-    background-color: #f9f8f6;
-    background-size: cover;
-    font-family: Georgia, Times, sans-serif;
-    line-height: 1.4em;
-    margin: 0px; 
-    background-attachment: fixed;
-    background-image: url("https://cdn.discordapp.com/attachments/927807364835455027/930769296349626388/wp6144011-lego-minecraft-wallpapers.png");
+  color: #666666;
+  background-color: #f9f8f6;
+  background-size: cover;
+  font-family: Georgia, Times, sans-serif;
+  line-height: 1.4em;
+  margin: 0px; 
+  background-attachment: fixed;
+  background-image: url("https://cdn.discordapp.com/attachments/917582730982723625/936961021489324073/yihao-ren-vayne-1.jpg");
 }
 .wrapper {
-    width: 940px;
-    margin: 20px auto 20px auto;
-    border: 0px solid #000000;
-    background-color: #ffffff;
-    opacity: 100%;
+  width: 940px;
+  margin: 20px auto 20px auto;
+  border: 0px solid #000000;
+  background-color: #ffffff;
+  opacity: 95%;
 }
 
 header {
-    height: 160px;
-    background-image: url("https://cdn.discordapp.com/attachments/874612979549736983/930491187729686538/wp4608215-minecraft-pro-design-wallpapers.png");
-    width: 100%;
-    box-shadow: 0px 6px;
+  height: 160px;
+  background-image: url("https://cdn.discordapp.com/attachments/917582730982723625/936967309866704916/yihao-ren-bai.jpg");
+  width: 100%;
+  box-shadow: 0px 6px;
 }
 h1 {
-    text-indent: -9999px;
-    width: 940px;
-    height: 130px;
-    margin: 0px;
+  text-indent: -9999px;
+  width: 940px;
+  height: 130px;
+  margin: 0px;
 }
 footer {
-    clear: both;
-    color: #ffffff;
-    overflow: hidden;
-    background: linear-gradient(45deg, #424242, #161616, #979797, #666666);
-	background-size: 200% 200%;
-	animation: gradient 15s ease infinite;
-    height: 100%;
-    text-decoration: none;
-    font-size: 15px;
-    text-align: center;
+  clear: both;
+  color: #ffffff;
+  overflow: hidden;
+  background: linear-gradient(45deg, #424242, #161616, #979797, #666666);
+  background-size: 200% 200%;
+  animation: gradient 15s ease infinite;
+  height: 100%;
+  text-decoration: none;
+  font-size: 15px;
+  text-align: center;
 
 }
 
 section.courses {
-    float:  left;
-    width: 659px;
-    border-right: 0px solid #eeeeee;
+  float:  left;
+  width: 940px;
+  border-right: 0px solid #eeeeee;
+  margin-bottom: 30px;
 }
 article {
-    clear: both;
-    overflow: auto;
-    width: 100%;
-    margin-bottom: -20px;
+  clear: both;
+  overflow: auto;
+  width: 100%;
+  margin-top: 40px;
 }
 hgroup {
-    margin-top: 30px;
+  margin-top: 40px;
 }
 figure {
-    float: left;
-    width: 290px;
-    height: 190px;
-    padding: 5px;
-    margin-left: 20px;
-    margin-top: 20px;
-    border: 0px solid #eeeeee;
+  float: left;
+  width: 290px;
+  height: 190px;
+  padding: 0px;
+  margin: 20px;
+  border: 0px solid #eeeeee;
 
 }
 figcaption {
-    font-size: 100%;
-    text-align: center;
+  font-size: 100%;
+  text-align: center;
 }
 aside {
-    width: 230px;
-    float: left;
-    padding: 0px 0px 0px 20px;
-    margin-top: -10px;
-
+  width: 230px;
+  float: left;
+  padding: 0px 0px 0px 20px;
 }
 aside section a {
-    display: block;
-    padding: 10px;
-    border-bottom: 1px solid #eeeeee;
+  display: block;
+  padding: 10px;
+  border-bottom: 1px solid #eeeeee;
 }
 aside section a:hover {
-    color: #985d6a;
-    background-color: #efefef;
+  color: #985d6a;
+  background-color: #efefef;
 }
 a {
-    color: #de6581;
-    text-decoration: #efefef;
+  color: #de6581;
+  text-decoration: #efefef;
 }
 h1, h2, h3 {
-    font-weight: normal;
+  font-weight: normal;
 }
 h2 {
-    margin: 10px 0px 10px 0px;
-    padding: 0px;
+  margin: 10px 0px 10px 0px;
+  padding: 0px;
 }
 h3 {
-    margin: 0px 0px 10px 0px;
-    color: #de6581;
+  margin: 0px 0px 10px 0px;
+  color: #de6581;
 }
 aside h2 {
-    padding: 30px 0px 10px 0px;
-    color: #de6581;
-}
-aside h2:hover {
-    padding: 30px 0px 10px 0px;
-    color: #ff2f2f;
-    text-shadow: #7575755e 2px 2px 3px;
-    cursor: pointer;
+  padding: 20px 0px 10px 0px;
+  color: #575757;
 }
 .navbar {
-    overflow: hidden;
-    background: linear-gradient(45deg, #424242, #161616, #979797, #666666);
-	background-size: 200% 200%;
-	animation: gradient 15s ease infinite;
-    height: 100%;
+  overflow: hidden;
+  background: linear-gradient(45deg, #424242, #161616, #979797, #666666);
+  background-size: 200% 200%;
+  animation: gradient 15s ease infinite;
+  height: 100%;
 
 }
 
 .navbar a {
-    float: left;
-    font-size: 16px;
-    color: white;
-    animation: gradient 15s ease infinite;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+  float: left;
+  font-size: 16px;
+  color: white;
+  animation: gradient 15s ease infinite;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 .navbar a:hover, .dropdown:hover .dropbtn {
-    background-color: #64cc33;
+  background-color: #64cc33;
 }
 .navbar .current{
-    background-color: #64cc33;
+  background-color: #64cc33;
 }
 .navbar .ul {
-    margin-left: 30px;
+  margin-left: 30px;
 }
 .navbar .li{
-	background-size: 200% 200%;
-	animation: gradient 15s ease infinite;
-    height: 100%;
-    display: inline;
-    margin-left: 25px;
+background-size: 200% 200%;
+animation: gradient 15s ease infinite;
+  height: 100%;
+  display: inline;
+  margin-left: 25px;
 }
 .navbar .li a {
-    color: #ffffff;
-    padding: 7px 10px 5px 10px;
+  color: #ffffff;
+  padding: 7px 10px 5px 10px;
 }
 .navbar a:hover {
-    color: #ffffff;
-    background-color: #ffffff77;
-    text-shadow: 2px 1px 3px rgba(0, 0, 0, 0.452);
+  color: #ffffff;
+  background-color: #ffffff77;
+  text-shadow: 2px 1px 3px rgba(0, 0, 0, 0.452);
 
 }
 .navbar a.current {
-    color: #ffffff;
-    background-color: #ffffff77;
-    margin-left: 25px;
+  color: #ffffff;
+  background-color: #ffffff77;
+  margin-left: 25px;
 }
 
 .li .dropdown {
-    float: left;
-    overflow: hidden;
+  float: left;
+  overflow: hidden;
 }
 
 .dropdown .current {
-    float: left;
-    overflow: hidden;
-    margin-left: 25px;
+  float: left;
+  overflow: hidden;
+  margin-left: 25px;
 }
 
 .li .dropdown .dropbtn {
-    font-size: 16px;  
-    border: none;
-    outline: none;
-    color: white;
-    padding: 14px 16px;
-    background-color: inherit;
-    font-family: inherit;
-    margin: 0;
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
 }
 
 .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    z-index: 1;
-    margin-top: 34.5px;
-    margin-left: 25px;
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  z-index: 9999;
+  margin-top: 34.5px;
+  margin-left: 25px;
 }
 
 .li .dropdown-content a {
-    float: none;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
 }
 
 .dropdown-content a:hover {
-    background-color: rgba(224, 224, 224, 0.651);
+  background-color: rgba(224, 224, 224, 0.651);
 }
 
 .dropdown:hover .dropdown-content {
-    display: block;
+  display: block;
 }
 
-.cards-list {
-    z-index: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
-  
-  .card {
-    width: 290px;
-    height: 170px;
-    border-radius: 12px;
-    box-shadow: 3px 3px 15px 7px rgba(0, 0, 0, 0.123);
-    cursor: pointer;
-    transition: 0.4s;
-    
-  }
-  
-  .card .card_image {
-    width: inherit;
-    height: inherit;
-    border-radius: 12px;
-  }
-  
-  .card .card_image img {
-    width: inherit;
-    height: inherit;
-    border-radius: 12px;
-    object-fit: cover;
-  }
-  .card:hover {
-    transform: scale(0.95, 0.95);
-    box-shadow: 5px 5px 15px 15px rgba(0,0,0,0.25);
-  }
-
-  .title-white {
-    color: white;
-  }
-  
-  .title-black {
-    color: black;
-  }
-  
-  @media all and (max-width: 500px) {
-    .card-list {
-      /* On small screens, we are no longer using row direction but column */
-      flex-direction: column;
-    }
-  }
+h2:after {
+  content: '';
+  z-index: 1;
+  bottom: 50%;
+  margin-bottom: -2px;
+  margin-left: 30px;
+  margin-right: 30px;
+  height: 2px;
+  left: 0;
+  right: 0;
+  background: #929292;
+}
 
 /* Dragon's part job Seraching box */	
 
@@ -312,18 +401,61 @@ aside h2:hover {
     opacity: 0;
     z-index: -1;		
 }
-Center{
-    text-align: center;
-    margin-top: 50px;
-}
+
 
 Box-Context{
     background-image: linear-gradient(45deg, rgba(117, 235, 39, 0.925), rgb(221, 95, 11));;
+    animation: gradient 15s ease infinite;
     padding: 30px;
     text-align: center;
     font-size: 35px;
     color: white;
 }
 
+.BG-Card
+{
+    background-image: linear-gradient(45deg, rgba(30, 152, 233, 0.925), rgba(60, 221, 11, 0.856));;
+    animation: gradient 15s ease infinite;
+    padding: 40px;        
+    text-align: center;
+    font-size: 35px;
+    color: white;     
+    margin-block-end: 15px;
+}
+
+
+/* update Part 2 Autocomplete*/
+/*the container must be positioned relative:*/
+.wrapper .autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    /*position the autocomplete items to be the same width as the container:*/
+    top: 100%;
+    left: 0;
+    right: 0;
+  }
+  
+.wrapper .autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff; 
+    border-bottom: 1px solid #d4d4d4; 
+}
+  
+  /*when hovering an item:*/
+.wrapper .autocomplete-items div:hover {
+    background-image: linear-gradient(45deg, rgba(117, 235, 39, 0.925), rgb(221, 95, 11));;
+    animation: gradient 15s ease infinite;
+}
+  
+  /*when navigating through the items using the arrow keys:*/
+.wrapper .autocomplete-active {
+    background-color: DodgerBlue !important; 
+    color: #ffffff; 
+}
+    
 
 
