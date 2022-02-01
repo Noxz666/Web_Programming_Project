@@ -352,6 +352,17 @@ h2:after {
 
 /* Dragon's part job Seraching box */	
 
+.BG-Card
+{
+    background-image: linear-gradient(45deg, rgba(30, 152, 233, 0.925), rgba(140, 0, 255, 0.856));;
+    animation: gradient 15s ease infinite;
+    padding: 40px;        
+    text-align: center;
+    font-size: 35px;
+    color: white;     
+    margin-block-end: 15px;
+}
+
 /*Searching Box position setting*/
 .wrapper .box {
     /* position: relative;*/
@@ -368,23 +379,24 @@ h2:after {
     padding: 10px;
     width: 60px;
     height: 60px;
-    background-image: linear-gradient(45deg, rgba(117, 235, 39, 0.925), rgb(221, 95, 11));;
+    background-image: linear-gradient(45deg, #7900FF, #548CFF);;
     animation: gradient 15s ease infinite;
-    border: 4px solid #099204;
+    border: 4px solid #000000;
     border-radius: 30px;
     box-sizing: border-box;
-    font-family: Comic Sans MS;
+    font-family: 'Times New Roman', Times, serif;
     font-size: 35px;
     color: #000000;
     outline: none;
     transition: .5s;    
+    
 
 }
 /*Box property setting*/	
 .wrapper .box:hover input{
     /* Size and colour Before Click After click*/
     width: 600px;
-    background-image: linear-gradient(90deg,rgb(221, 95, 11),rgba(117, 235, 39, 0.925));;
+    background-image: linear-gradient(90deg,#7900FF,#548CFF);;
     opacity: 90%;
     border-radius: 5px;		
 }	
@@ -402,6 +414,11 @@ h2:after {
     z-index: -1;		
 }
 
+::placeholder {
+  color: rgb(59, 59, 59);
+  opacity: 1; 
+}
+
 
 Box-Context{
     background-image: linear-gradient(45deg, rgba(117, 235, 39, 0.925), rgb(221, 95, 11));;
@@ -411,18 +428,6 @@ Box-Context{
     font-size: 35px;
     color: white;
 }
-
-.BG-Card
-{
-    background-image: linear-gradient(45deg, rgba(30, 152, 233, 0.925), rgba(60, 221, 11, 0.856));;
-    animation: gradient 15s ease infinite;
-    padding: 40px;        
-    text-align: center;
-    font-size: 35px;
-    color: white;     
-    margin-block-end: 15px;
-}
-
 
 /* update Part 2 Autocomplete*/
 /*the container must be positioned relative:*/
@@ -443,6 +448,7 @@ Box-Context{
     cursor: pointer;
     background-color: #fff; 
     border-bottom: 1px solid #d4d4d4; 
+    font-family: 'Times New Roman', Times, serif;
 }
   
   /*when hovering an item:*/
