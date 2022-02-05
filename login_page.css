@@ -1,3 +1,4 @@
+/* Comment will only be make at a section different from homepage since most aspect of this page is the same as homepage*/
 body {
     color: #666666;
     background-color: #f9f8f6;
@@ -42,6 +43,8 @@ footer {
 
 }
 
+/* This is the beginning of login page section (the grey part)*/
+/* Adjust font, background color, width and the border*/
 section.courses {
     font-family: "Noto Sans", sans-serif;
     background-color: #1F1F1F;
@@ -50,17 +53,20 @@ section.courses {
     border-right: 0px solid #eeeeee;
 }
 
+/* The text section below image*/
 .abandonallhope {
     font-size: 15px;
     color: #ffffff;
     font-style: italic;
 }
 
+/* Customization of login box for margin and text alignment*/
 .loginbox {
     margin: 0;
     text-align: center;
 }
 
+/* The whole part of login box part and input*/
 input {
     font-family: "Noto Sans", sans-serif;
     font-size: 14px;
@@ -73,6 +79,7 @@ input {
     background-color: #4D4D4D;
 }
 
+/* The input class part */
 .input:first-of-type input {
     margin: auto;
     margin-bottom: 0.3px;
@@ -89,6 +96,7 @@ input {
     border-bottom-right-radius: 2px;
 }
 
+/* The login button part*/
 button {
     color: white;
     font-family: "Noto Sans", sans-serif;
@@ -103,11 +111,13 @@ button {
     height: 50px;
 }
 
+/* Change cursor of login part when hover over*/
 button:hover {
     cursor: pointer;
     opacity: 0.8;
 }
 
+/* The regis and reset text link under the login button*/
 .register, .reset {
     font-size: 0.875em;
     font-weight: lighter;
@@ -117,15 +127,18 @@ button:hover {
     color: white;
 }
 
+/* Change cursor of register and reset part when hover over*/
 .register a:hover, .reset a:hover {
     color: #ED2553;
 }
 
+/* The belowLogin class part encompassing both text*/
 .belowlogin {
     justify-content: center;
     margin-bottom: 100px;
 }
 
+/* The belowloginlink class */
 .belowloginlink {
     color: white;
     font-weight: bold;
