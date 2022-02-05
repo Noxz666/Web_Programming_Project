@@ -26,7 +26,7 @@
 				<div class="li">
 					<a class="li" href="homepage.html">Home</a>
 					<a class="li" href="downloadpage.html">Download</a>
-					<a class="li" href="#">Shops</a>
+					<a class="li" href="shoppage.html">Shops</a>
 					<div class="dropdown">
 						<a class="li" class="dropbtn">About us</a>
 						<div class="dropdown-content">
@@ -45,13 +45,13 @@
 		<section class="courses">			
 			<article>							
 				<h3 class="BG-Card">How can we help?</h3>	
-				<p style="color: crimson;">Please use enter to submit kub</p>							
+				<!-- <p style="color: crimson;">Please use enter to submit kub</p>-->
 				<br><br>
 				<div class="box">
 					<form name="search" onsubmit="return Halt_Function()" autocomplete="off">						
-						<div class="autocomplete">
+						<div class="autocomplete" onmouseout="ClearText()">
 							<input type="text" class="input" name="txt" placeholder="    Enter to submit" 
-							id="Find" onmouseout="ClearText(); ">
+							id="Find" >
 						</div>
 					</form>
 					<icon > 
@@ -71,7 +71,7 @@
 					<div class="curtain"></div>
 				</div>
 
-				<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>		
+				<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>		
 
 				<h2><strong>Recommended News</strong></h2>
 				<section class="popular-questions" id="Ads-on"></section>
@@ -104,7 +104,7 @@
 		
 		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>		
 		<footer>
-			&copy; Last Updated: 29-Jan-2022 at 69:96 GM
+			&copy; Last Updated: 29-Jan-2022 at 5:16 PM
 		</footer>
 	</div><!-- .wrapper -->
 	</body>
@@ -127,7 +127,7 @@
 
 	function ClearText() {
 		
-		document.getElementById("Find").value = ' '
+		document.getElementById("Find").value = ''
 		document.getElementById("Find").ariaPlaceholder= '    Enter to submit'
 		
 	}
