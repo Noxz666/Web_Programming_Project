@@ -8,7 +8,8 @@ body {
     background-attachment: fixed;
     background-image: url("https://cdn.discordapp.com/attachments/874612979549736983/930869688253181962/wallpaperflare.com_wallpaper.jpg");
 }
-.wrapper {
+/* ิa page where we work with */
+.wrapper { 
     width: 940px;
     margin: 20px auto 20px auto;
     border: 0px solid #000000;
@@ -44,7 +45,7 @@ footer {
     text-align: center;
 
 }
-
+/* left section of the article  */
 section.courses {
     float:  left;
     width: 880px;
@@ -105,7 +106,7 @@ aside h2 {
     padding: 30px 0px 10px 0px;
     color: #de6581;
 }
-
+/* navigation bar main class  */
 .navbar {
     overflow: hidden;
     background: linear-gradient(45deg, #424242, #161616, #979797, #666666);
@@ -114,7 +115,7 @@ aside h2 {
     height: 100%;
 
 }
-
+/* navigation bar tag a */
 .navbar a {
     float: left;
     font-size: 16px;
@@ -123,12 +124,6 @@ aside h2 {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-}
-.navbar a:hover, .dropdown:hover .dropbtn {
-    background-color: #64cc33;
-}
-.navbar .current{
-    background-color: #64cc33;
 }
 .navbar .ul {
     margin-left: 30px;
@@ -216,7 +211,7 @@ aside h2 {
 	}
 }
 
-
+/* just animation background */
 .circles{
     position: absolute;
     top: 0;

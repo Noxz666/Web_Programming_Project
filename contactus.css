@@ -6,7 +6,7 @@ body {
     line-height: 1.4em;
     margin: 0px; 
     background-attachment: fixed;
-    background-image: url("https://i.kym-cdn.com/entries/icons/original/000/034/421/cover1.jpg");
+    background-image: url("https://cdn.discordapp.com/attachments/927807364835455027/930769296349626388/wp6144011-lego-minecraft-wallpapers.png");
 }
 .wrapper {
     width: 940px;
@@ -71,7 +71,7 @@ figcaption {
     text-align: center;
 }
 aside {
-    width: 300px;
+    width: 230px;
     float: left;
     padding: 0px 0px 0px 20px;
     margin-top: -10px;
@@ -321,6 +321,8 @@ aside h2:hover {
     animation-duration: 11s;
 }
 
+
+
 @keyframes animate {
 
     0%{
@@ -336,3 +338,53 @@ aside h2:hover {
     }
 
 }
+
+.cards-list {
+    z-index: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    width: 290px;
+    height: 170px;
+    border-radius: 12px;
+    box-shadow: 3px 3px 15px 7px rgba(0, 0, 0, 0.123);
+    cursor: pointer;
+    transition: 0.4s;
+    
+  }
+  
+  .card .card_image {
+    width: inherit;
+    height: inherit;
+    border-radius: 12px;
+  }
+  
+  .card .card_image img {
+    width: inherit;
+    height: inherit;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+  .card:hover {
+    transform: scale(0.95, 0.95);
+    box-shadow: 5px 5px 15px 15px rgba(0,0,0,0.25);
+  }
+
+  .title-white {
+    color: white;
+  }
+  
+  .title-black {
+    color: black;
+  }
+  
+  @media all and (max-width: 500px) {
+    .card-list {
+      /* On small screens, we are no longer using row direction but column */
+      flex-direction: column;
+    }
+  }
