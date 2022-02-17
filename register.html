@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Project1 Homepage</title>
-	<link rel="stylesheet" href="homepage.css">
+	<link rel="stylesheet" href="register.css">
 	<style type="text/css">
 		header, section, footer, aside, nav, article, figure, figcaption {
 			display: block; 
@@ -51,19 +51,43 @@
 		  </div>
 		<!-- right section for news and description -->
 		<section class="courses">
+            <figure>
+				<!-- Image for login page (ricardo) -->
+				<img src="https://media.discordapp.net/attachments/927807364835455027/932684293220732938/GenerousNimbleIbis-size_restricted.gif" class="center" alt="ricardo" class="center" width=900px>
+			</figure>
+			
+			<!-- Text below the image, above the login boxes -->
+            <p class="abandonallhope">Abandon all hope, ye who enter here <br> ここから入らんとする者は一切の希望を放棄せよ</p>
 			<form action="/form-post" method="POST" class="register_form">
-                
+                <div class="loginbox">
+					<div class="input">
+						<input type="text" id="username"  placeholder="username (or email)" required>
+					</div>
+					<div class="input">
+					    <input type="password" id="password"  placeholder="password" required>
+					</div>
+                    <div class="input">
+					    <input type="text" id="name"  placeholder="name" required>
+					</div>
+                    <div class="input">
+					    <input type="text" id="surname"  placeholder="surname" required>
+					</div>
+				<button type="submit">
+					<i class="fa fa-sign-in"></i>
+					Register
+				</button>
             </form>
+            <!-- Back to login page-->
+            <div class="belowlogin">
+				<div class="register">
+					already have an account? <a class="belowloginlink" href="login_page.html">Log in</a>
+				</div>
+			</div>
 		</section>
-		<aside>
-			<section class="popular-questions">
-				<h2>Popular Questions</h2>
-				<a href="">How to download the game?</a>
-				<a href="">Do I have to purchase the game to play?</a>
-				<a href="">How can I change the skin?</a>
-				<a href="">How to top up?</a>
-			</section>
-		</aside>
+        <aside>
+            
+        </aside>
+		
 		<footer>
 			&copy; Last Updated: 6-Feb-2022 at 13:51 PM 
 		</footer>
