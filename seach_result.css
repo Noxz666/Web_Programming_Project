@@ -4,20 +4,19 @@
     position: absolute;
     float: center; 
     left: 50%;    
-    margin-top: 250px;
+    margin-top: 300px;
     
     /* animation <- -> */
     transform: translate(-50%, -50%);    
 
     /* property */
-    height: 300px;
+    height: 400px;
     width: 800px;
     background: #f2f2f2;
     overflow: hidden;
     border-radius: 20px;
     cursor: pointer;
-    box-shadow: 0 0 20px 8px #d0d0d0;  
-    padding: 30px; 
+    box-shadow: 0 0 20px 8px #d0d0d0;   
     
   }
 /*Context Setting*/  
@@ -67,7 +66,6 @@
 }
   
 .wrapper .container:hover .curtain::before{
-    transform: translatex(-400px);
-    
+    transform: translatex(-400px);    
 }
 
