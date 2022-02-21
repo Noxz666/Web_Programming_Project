@@ -30,6 +30,7 @@ h1 {
     margin: 0px;
 }
 footer {
+    /* Clear both left and right of the text */
     clear: both;
     color: #ffffff;
     overflow: hidden;
@@ -99,6 +100,7 @@ input {
 /* The login button part*/
 button {
     color: white;
+    /* There are two font because the first font and second font */
     font-family: "Noto Sans", sans-serif;
     font-size: 16.8px;
     font-weight: 700;
@@ -298,6 +300,7 @@ aside h2 {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
 @keyframes gradient {
 	0% {
 		background-position: 0% 50%;
