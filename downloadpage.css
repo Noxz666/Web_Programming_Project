@@ -26,17 +26,23 @@ h2 strong {
   margin-bottom: 20px;
   cursor: pointer;
 }
+/* news is the picture that have text on top on the news section under
+games card*/
 .news{
   flex-flow: row wrap;
   justify-content: center;
   cursor: pointer;
 }
+/* Card is the image, Cards is the picture of the game that can be download
+in the center */
 .card {
   margin: 10px;
   width: 170px;
   height: 290px;
-  overflow: hidden;
+  overflow: hidden; /* Anything exceeds width and height will be cut */
   box-shadow: 0 5px 10px rgba(0,0,0,0.8);
+  /* move the point of rotaion to the designated area, in this case center
+  of top */
   transform-origin: center top;
   transform-style: preserve-3d;
   transform: translateZ(0);
@@ -47,6 +53,7 @@ h2 strong {
   width: 100%;
   min-height: 100%;
 }
+/* The name of the game when hover the mouse over */
 .card figcaption{
   bottom: 0;
   left: 0;
@@ -58,9 +65,12 @@ h2 strong {
   font-weight: 600;
   background: none;
   color: #fff;
+  /* translateY the more % the lower it is so normally
+  the text is hidden but when gover over it's tranform back */
   transform: translateY(100%);
   transition: 0.3s;
 }
+/* The shadow of the card (45 degree of the pic) */
 .card:after {
   content: '';
   z-index: 10;
@@ -75,6 +85,8 @@ h2 strong {
 }
 .card:hover {
   box-shadow: 0 8px 16px 3px rgba(0,0,0,0.6);
+  /* translateY -3px will make image bigger 
+  rotateX will move the pic in x-axis, like a dog's door*/
   transform: translateY(-3px) scale(1.06) rotateX(15deg);
 }
 .card:hover figcaption {
@@ -128,6 +140,8 @@ h2 strong {
   filter: blur(10px);
   transform: scale(0.97);
 }
+/* Show the figcaption of image in "What's new?" section 
+by transforming opacity to 1 */
 .article:hover figcaption {
   opacity: 1;
   transform: none;

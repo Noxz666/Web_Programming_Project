@@ -8,6 +8,8 @@ body {
     background-attachment: fixed;
     background-image: url("https://cdn.discordapp.com/attachments/927807364835455027/930769296349626388/wp6144011-lego-minecraft-wallpapers.png");
 }
+
+/* The entire area from web banner down to footer */
 .wrapper {
     width: 940px;
     margin: 20px auto 20px auto;
@@ -111,6 +113,7 @@ aside h2:hover {
     text-shadow: #7575755e 2px 2px 3px;
     cursor: pointer;
 }
+
 .navbar {
     overflow: hidden;
     background: linear-gradient(45deg, #424242, #161616, #979797, #666666);
@@ -129,15 +132,19 @@ aside h2:hover {
     padding: 14px 16px;
     text-decoration: none;
 }
+/* The color is white green is overwrite later so it's not green*/
 .navbar a:hover, .dropdown:hover .dropbtn {
     background-color: #64cc33;
 }
 .navbar .current{
     background-color: #64cc33;
 }
+/* The part used to hide the background on top of navbar, it's not visible
+unless we inspect the page*/
 .navbar .ul {
     margin-left: 30px;
 }
+/* The button enclosing text to each page (the link)*/
 .navbar .li{
 	background-size: 200% 200%;
 	animation: gradient 15s ease infinite;
@@ -145,6 +152,7 @@ aside h2:hover {
     display: inline;
     margin-left: 25px;
 }
+
 .navbar .li a {
     color: #ffffff;
     padding: 7px 10px 5px 10px;
@@ -160,7 +168,7 @@ aside h2:hover {
     background-color: #ffffff77;
     margin-left: 25px;
 }
-
+/* Mostly from w3school, just used for drop down menu*/
 .li .dropdown {
     float: left;
     overflow: hidden;
@@ -184,6 +192,7 @@ aside h2:hover {
 }
 
 .dropdown-content {
+    /* Display none because it's hidden until we hover mouse over it*/
     display: none;
     position: absolute;
     background-color: #f9f9f9;
@@ -209,6 +218,8 @@ aside h2:hover {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+/* Gradient animation on navbar */
 @keyframes gradient {
 	0% {
 		background-position: 0% 50%;
@@ -221,7 +232,7 @@ aside h2:hover {
 	}
 }
 
-
+/* The flying circular edge cube in the website*/
 .circles{
     position: absolute;
     top: 0;
@@ -322,7 +333,8 @@ aside h2:hover {
 }
 
 
-
+/* The animation 0 to 50 to 100 is the speed, this will be quite low,
+if from 0 to 10 however, will be extremely fast */
 @keyframes animate {
 
     0%{
@@ -346,7 +358,8 @@ aside h2:hover {
     justify-content: space-around;
     flex-wrap: wrap;
   }
-  
+
+/* The shrinkable image on the web, image will shrink when hover*/
   .card {
     width: 290px;
     height: 170px;
