@@ -1,0 +1,71 @@
+/* Main Box Setting */
+.wrapper .container  {
+    /* position setting */
+    position: absolute;
+    float: center; 
+    left: 50%;    
+    margin-top: 300px;
+    
+    /* animation <- -> */
+    transform: translate(-50%, -50%);    
+
+    /* property */
+    height: 400px;
+    width: 800px;
+    background: #f2f2f2;
+    overflow: hidden;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 0 20px 8px #d0d0d0;   
+    
+  }
+/*Context Setting*/  
+.wrapper .content {
+  position: absolute;
+  top: 50%;
+  transform: translatey(-50%);
+  text-align: center;
+  color: black;
+  padding: 40px;
+  font-family: serif;
+} 
+
+/* curtain Layer Animation */
+.wrapper .curtain {
+    width: 100%;
+    height: 100%;
+}
+/* curtain Layer Animation [left]*/    
+.wrapper .curtain::before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 50%;
+    background:white;
+    background-position: 100px;
+    background-repeat: no-repeat;
+    transition: 1s;
+}
+/* curtain Layer Animation [right]*/  
+.wrapper .curtain::after {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 50%;
+    right: 0;
+    background:white;
+    background-position: -200px;
+    background-repeat: no-repeat;
+    transition: 1s;
+}
+
+/*When mouse over*/
+.wrapper .container:hover .curtain::after {
+    transform: translatex(400px);
+    
+}
+  
+.wrapper .container:hover .curtain::before{
+    transform: translatex(-400px);    
+}
+

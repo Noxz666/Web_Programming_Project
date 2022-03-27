@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Login Page</title>
+	<link rel="stylesheet" href="login_page.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style type="text/css">
+		header, section, footer, aside, nav, article, figure, figcaption {
+			display: block; 
+	}
+	</style>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js/"></script>
+</head>
+<body>
+	<!-- .wrapper คือ กระดาษลองพื้นขาว ๆ-->
+	<!-- nav ul คือ แถบสีเท่าเข้มตรง navigation bar-->
+	<div class="wrapper">
+		<header>
+			<h1>On top of navigation  bar</h1>
+		</header>
+		<!-- Navigation bar -->
+		<div class="navbar">
+			<div class="ul">
+				<div class="li">
+					<a class="li" href="homepage.html">Home</a>
+					<a class="li" href="downloadpage.html">Games</a>
+					<div class="dropdown">
+						<a class="li" class="dropbtn">About us</a>
+						<div class="dropdown-content">
+							<a href="aboutus.html">Team Members</a>
+							<a href="contactus.html">Contact Us</a>
+						</div> 
+					</div> 
+					<a class="li" href="search_page.html">Search</a>
+					<a class="current" href="login_page.html" style="margin-left: 18em">Log in</a>
+					<a class="li" href="register.html">Sign up</a>
+				</div>
+			</div>
+		  </div>
+
+        <section class="courses">
+            <figure>
+				<!-- Image for login page (ricardo) -->
+				<img src="https://media.discordapp.net/attachments/927807364835455027/932684293220732938/GenerousNimbleIbis-size_restricted.gif" class="center" alt="ricardo" class="center" width=900px>
+			</figure>
+			
+			<!-- Text below the image, above the login boxes -->
+            <p class="abandonallhope">Abandon all hope, ye who enter here <br> ここから入らんとする者は一切の希望を放棄せよ</p>
+			<form action="user-auth" method="post">
+				<!-- Login box and login button -->
+				<div class="loginbox">
+					<div class="input">
+						<input type="text" id="username" name="username" placeholder="username (or email)" required>
+					</div>
+					<div class="input">
+					<input type="password" id="password" name="password" placeholder="password" required>
+					</div>
+				<button type="submit">
+					<i class="fa fa-sign-in"></i>
+					Login
+				</button>
+			</form>
+			<!-- Register and reset password, below login box -->
+			<div class="belowlogin">
+				<div class="register">
+					Don't have an account? <a class="belowloginlink" href="https://biPMuscle.com/">Register</a>
+				</div>
+				<div class="reset">
+					Forgot your password? <a class="belowloginlink" href="https://biPMuscle.com/">Reset it</a>  
+				</div>
+			</div>
+            
+		</section>
+		<aside>
+			
+		</aside>
+		<footer>
+			&copy; Last Updated: 5-Feb-2022 at 3:00 PM 
+		</footer>
+	</div><!-- .wrapper -->
+	</body>
+</html>
+<!-- Test for change-->
