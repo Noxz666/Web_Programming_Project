@@ -69,3 +69,7 @@
     transform: translatex(-400px);    
 }
 
+.Result {
+    font-size: 15px;
+    margin: left;
+  }

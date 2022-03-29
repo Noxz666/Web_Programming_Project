@@ -151,6 +151,14 @@ body {
   opacity: 95%;
 }
 
+p.head1 {
+  margin: 35px;
+}
+
+h3.head1 {
+  margin: 15px;
+}
+
 header {
   height: 160px;
   background-image: url("https://cdn.discordapp.com/attachments/917582730982723625/936967309866704916/yihao-ren-bai.jpg");

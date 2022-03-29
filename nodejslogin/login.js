@@ -9,6 +9,7 @@ const user_route = express.Router();
 const admin_route = express.Router();
 
 app.use(bodyParser.urlencoded({ extended: true}));
+app.set("view engine", "ejs");
 app.use(bodyParser.json());
 // Use this to find html_pages folder in the root folder (nodejslogin, in this case)
 app.use(express.static(path.join(__dirname, "html_pages")));
@@ -79,8 +80,21 @@ user_route.get('/register', function (req, res){
 });
 
 user_route.get('/search', function (req, res){
-    res.sendFile(path.join(__dirname + '/html_pages/search_page.html'));
+    res.sendFile(path.join(__dirname + '/html_pages/search_page.html'));   
 });
+
+//test
+user_route.get('/search/FindAll', function (req, res){    
+    dbConnection.query('SELECT * FROM Product', function (error, results) {
+        if (error) throw error;
+        return res.send({ 
+            error: false, 
+            data: results, 
+            message: 'users list.' });
+    });
+});
+
+
 
 // Admin route
 
