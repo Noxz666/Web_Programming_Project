@@ -104,6 +104,8 @@ admin_route.get('/', (req, res) => {
 
 // CRUD Operation for admin
 
+// User management part
+
 // Get all users information from the database
 admin_route.get('/users', function (req, res) {
     dbConnection.query('SELECT * FROM users', function (error, results) {
@@ -183,6 +185,94 @@ admin_route.delete('/user/:id', (req, res)=>{
     
     })
 });
+
+// Product Management Part
+
+// Get all products information from the database
+admin_route.get('/products', function (req, res) {
+    dbConnection.query('SELECT * FROM products', function (error, results) {
+    if (error) throw error;
+        return res.send({ 
+            error: false, 
+            data: results, 
+            message: 'products list.' });
+    });
+});
+
+// Get a specific product ID from the database
+admin_route.get('/product/:id', (req, res)=>{
+    let id = req.params.id;
+    if (!id) {
+        return res.status(400).send({ error: true, message: 'Please provide user id.' });
+    }
+    dbConnection.query('SELECT * FROM products WHERE p_id = ?', id, (err, rows, fields)=>{
+        if (!err) {
+            res.send(rows);
+        } else {
+            res.send(err);
+        }
+        //return res.send({ error: false, data: results[0], message: 'product retrieved' });
+    })
+});
+
+// Insert a new product
+admin_route.post('/product', (req, res)=>{
+    let product = req.body;
+    //console.log(req.body)
+    //res.send(product);
+    console.log(req.body);
+
+    if (!product) {
+        return res.status(400).send({ error: true, message: 'Please provide the product information' });
+    }
+    var sql = "INSERT INTO `products` (`p_id`, `p_name`, `rating`, `age_restriction`, `company_name`, `p_price`, `p_type`, `p_platform`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
+    
+    dbConnection.query(sql, [product.p_id, product.p_name, product.rating, product.age_restriction, product.company_name, product.p_price, product.p_type, product.p_platform], 
+        (err, rows, field)=>{
+        if(!err){
+            res.send('Product record successfully added');
+        } else {
+            res.send(err);
+        }
+        //eturn res.send({error: false, data: results.affectedRows, message: 'New product record has been created successfully.'});
+    })
+});
+
+// Update an existing entry
+admin_route.put('/product', (req, res)=>{
+    let product = req.body;
+    var sql = "UPDATE products SET p_name = ?, rating = ?, age_restriction = ?, company_name = ?, p_price = ?, p_type = ?, p_platform = ? WHERE p_id = ?";
+    dbConnection.query(sql, [product.p_name, product.rating, product.age_restriction, product.company_name, product.p_price, product.p_type, product.p_platform, product.p_id], 
+        (err, rows, fields) => {
+        if(!err){
+            res.send('Updated successfully');
+            //console.log(rows);
+        }
+        else{
+            res.send(err);
+        }
+        //return res.send({error: false, data: results.affectedRows, message: 'User has been updated successfully.'})
+    })
+});
+
+// Delete an exisiting entry
+admin_route.delete('/product/:id', (req, res)=>{
+    let id = req.params.id;
+    if (!id) {
+        return res.status(400).send({ error: true, message: 'Please provide product id' });
+    }
+    dbConnection.query('DELETE FROM products WHERE p_id = ?',[id], (err, rows, fields)=>{
+        if (!err){
+            res.send("Deleted successfully")
+        } else {
+            res.send(err);
+        }
+        //return res.send({ error: false, data: results.affectedRows, message: 'Student has been deleted successfully.' });
+    
+    })
+});
+
+// Authentication part
 
 // User authentication part
 app.post('/user-auth', (req, res) => {
