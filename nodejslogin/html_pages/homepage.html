@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Project1 Homepage</title>
-	<link rel="stylesheet" type="text/css" href="/homepage.css">
+	<link rel="stylesheet" href="homepage.css">
 	<style type="text/css">
 		header, section, footer, aside, nav, article, figure, figcaption {
 			display: block; 
@@ -98,11 +98,15 @@
 		</section>
 		<aside>
 			<section class="popular-questions">
-				<h2>Popular Questions</h2>
-				<a href="">How to download the game?</a>
-				<a href="">Do I have to purchase the game to play?</a>
-				<a href="">How can I change the skin?</a>
-				<a href="">How to top up?</a>
+				<h2>Valorant Lookup</h2>
+				<h4 style="margin-left:10px">Name Search</h4>
+				<input style="margin-left:10px" type="text" id="textbox" name="search"  placeholder="What are you looking for?">
+				<h4 style="margin-left:10px">Tag Search</h4>
+				<input type="tag" id="tagname" style="margin-left:10px" name="tag_seach" placeholder="tag?">
+				<input type="submit" id="tagsubmit" value="search" class="searchButton" onclick="getConferenceResponses()">
+				<div class="api" id="test" style="margin-left:10px">
+					<!-- empty -->
+				</div>
 			</section>
 		</aside>
 		<footer>
@@ -110,4 +114,45 @@
 		</footer>
 	</div><!-- .wrapper -->
 	</body>
+	<script type="application/javascript">
+		/* ----- Your JS code is here -----  */
+		function getConferenceResponses() {
+			document.querySelector("#test").style.visibility = "visible";
+			let name = document.querySelector("#textbox").value; // Get query from a textbox
+			let tag = document.querySelector("#tagname").value; // Get query from a textbox
+			// let APi_key = "5040409a82354d7487f62fa308148a6d";
+			let rooturl =
+			"https://api.henrikdev.xyz/valorant/v1/account/"+name+"/"+tag
+			//Request URL
+			fetch(rooturl)
+				.then((res) => res.json()) // Get JSON from the response
+				.then((data) => {
+					console.log(data.data);
+					let results = data.data;
+					document.querySelector("#test").innerHTML = "<h4 id=\"playername\">"+ results.name +"</h4>";
+					// for (let index = 0; index < results.length; index++) {
+					// }
+					getMMR(results);
+				})
+				.catch((err) => console.log(err));
+			}
+			function getMMR(player) {
+				// let APi_key = "5040409a82354d7487f62fa308148a6d";
+				let rooturl =
+				"https://api.henrikdev.xyz/valorant/v1/mmr-history/"+player.region+"/"+player.name+"/"+player.tag
+				//Request URL
+				fetch(rooturl)
+					.then((res) => res.json()) // Get JSON from the response
+					.then((data) => {
+						console.log(data.data);
+						let results = data.data;
+						// for (let index = 0; index < results.length; index++) {
+						document.querySelector("#test").innerHTML += "<h5> Rank: "+ results[0].currenttierpatched+ "</h5>";
+						document.querySelector("#test").innerHTML += "<h5> Last Login: "+ player.last_update+ "</h5>";
+						document.querySelector("#test").innerHTML += "<img id=\"tagimg\" src=" + player.card.small + ">";
+						// }
+					})
+					.catch((err) => console.log(err));
+			}
+	</script>
 </html>

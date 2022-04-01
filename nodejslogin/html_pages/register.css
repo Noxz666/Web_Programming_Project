@@ -456,7 +456,7 @@ p{
     margin: 20px auto 20px auto;
     border: 0px solid #000000;
     background-color: #ffffff;
-    opacity: 90%;
+    opacity: 99%;
 }
 
 header {
@@ -485,11 +485,11 @@ footer {
 
 }
 
-section.courses {
+/* section.courses {
     float:  left;
     width: 659px;
     border-right: 0px solid #eeeeee;
-}
+} */
 article {
     clear: both;
     overflow: auto;

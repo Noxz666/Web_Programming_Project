@@ -405,7 +405,7 @@ h2:after {
     /* Size and colour Before Click After click*/
     width: 600px;
     background-image: linear-gradient(90deg,#7900FF,#548CFF);;
-    opacity: 90%;
+    opacity: 99%;
     border-radius: 5px;		
 }	
 /* Icon position setting */

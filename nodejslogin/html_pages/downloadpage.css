@@ -154,19 +154,19 @@ body {
   line-height: 1.4em;
   margin: 0px; 
   background-attachment: fixed;
-  background-image: url("https://cdn.discordapp.com/attachments/874612979549736983/931143117703360512/arcane-league-of-legends_5120x2880_xtrafondos.com.jpg");
+  background-image: url("https://wallpapercave.com/wp/wp6208005.jpg");
 }
 .wrapper {
   width: 940px;
   margin: 20px auto 20px auto;
   border: 0px solid #000000;
   background-color: #ffffff;
-  opacity: 90%;
+  opacity: 99%;
 }
 
 header {
   height: 160px;
-  background-image: url("https://cdn.discordapp.com/attachments/874612979549736983/931174671561420851/ashe-league-of-legends_3840x2160_xtrafondos.com.png");
+  background-image: url("https://wallpapercave.com/wp/wp6208005.jpg");
   width: 100%;
   box-shadow: 0px 6px;
 }
@@ -269,12 +269,6 @@ aside h2 {
   padding: 14px 16px;
   text-decoration: none;
 }
-.navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: #64cc33;
-}
-.navbar .current{
-  background-color: #64cc33;
-}
 .navbar .ul {
   margin-left: 30px;
 }
@@ -331,6 +325,7 @@ aside h2 {
   z-index: 9999;
   margin-top: 34.5px;
   margin-left: 25px;
+  
 }
 
 .li .dropdown-content a {
@@ -340,6 +335,7 @@ aside h2 {
   text-decoration: none;
   display: block;
   text-align: left;
+  
 }
 
 .dropdown-content a:hover {
