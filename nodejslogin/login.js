@@ -96,7 +96,8 @@ user_route.get('/search/FindAll', function (req, res){
 
 
 
-// Admin route
+//  Admin route
+
 
 admin_route.get('/', (req, res) => {
     res.sendFile(path.join(__dirname + '/html_pages/login.html'));
@@ -105,6 +106,12 @@ admin_route.get('/', (req, res) => {
 // CRUD Operation for admin
 
 // User management part
+
+/*  Testing getting all users information
+method: get
+url: http://localhost:3000/admin/users 
+this give you lists of all users in the .sql file
+*/
 
 // Get all users information from the database
 admin_route.get('/users', function (req, res) {
@@ -116,6 +123,16 @@ admin_route.get('/users', function (req, res) {
             message: 'users list.' });
     });
 });
+
+/* Testing getting a specific user id information
+method: get
+url: http://localhost:3000/admin/user/3" 
+this will give you the user with the id 3
+
+method:get 
+url: http://localhost:3000/admin/user/4 
+this will give you the user with the id 4
+*/
 
 // Get a specific user ID from the database
 admin_route.get('/user/:id', (req, res)=>{
@@ -133,11 +150,41 @@ admin_route.get('/user/:id', (req, res)=>{
     })
 });
 
+/*  Test inserting a new user
+* if you can't send raw data check your headers tab in Postman
+https://stackoverflow.com/questions/58062558/postman-send-strange-response-for-raw-json-post-node-js
+
+method: post
+url: http://localhost:3000/admin/user
+header: Content-Type: application/json
+body: raw JSON
+
+{
+    "id":"4",
+    "username":"heheboi",
+    "password":"555555",
+    "email":"heheboi@gmail.com"
+}
+
+method: post
+url: http://localhost:3000/admin/user
+header: Content-Type: application/json
+body: raw JSON
+{
+    "id":"5",
+    "username":"catto",
+    "password":"123456",
+    "email":"catto@gmail.com"
+}
+
+*/
+
 // Insert a new entry
 admin_route.post('/user', (req, res)=>{
     let user = req.body;
     //console.log(req.body)
     //res.send(user);
+    console.log(req.body);
     if (!user) {
         return res.status(400).send({ error: true, message: 'Please provide user information' });
     }
@@ -152,6 +199,35 @@ admin_route.post('/user', (req, res)=>{
         //eturn res.send({error: false, data: results.affectedRows, message: 'New user has beencreated successfully.'});
     })
 });
+
+/*  Test updating an existing user
+* if you can't send raw data check your headers tab in Postman
+https://stackoverflow.com/questions/58062558/postman-send-strange-response-for-raw-json-post-node-js
+
+method: put
+url: http://localhost:3000/admin/user
+header: Content-Type: application/json
+body: raw JSON
+
+{
+    "id":"4",
+    "username":"hohoboi",
+    "password":"4444",
+    "email":"hohoboi@gmail.com"
+}
+
+method: put
+url: http://localhost:3000/admin/user
+header: Content-Type: application/json
+body: raw JSON
+{
+    "id":"5",
+    "username":"batto",
+    "password":"666666",
+    "email":"batto@gmail.com"
+}
+
+*/
 
 // Update an existing entry
 admin_route.put('/user', (req, res)=>{
@@ -168,6 +244,16 @@ admin_route.put('/user', (req, res)=>{
         //return res.send({error: false, data: results.affectedRows, message: 'User has been updated successfully.'})
     })
 });
+
+/* Testing delete a specific user id 
+method: delete
+url: http://localhost:3000/admin/user/4" 
+this will delete a user with the id 4
+
+method:get 
+url: http://localhost:3000/admin/user/5
+this will delete a user with the id 5
+*/
 
 // Delete an exisiting entry
 admin_route.delete('/user/:id', (req, res)=>{
@@ -188,6 +274,12 @@ admin_route.delete('/user/:id', (req, res)=>{
 
 // Product Management Part
 
+/*  Testing getting all products information
+method: get
+url: http://localhost:3000/admin/products
+this give you lists of all products in the .sql file
+*/
+
 // Get all products information from the database
 admin_route.get('/products', function (req, res) {
     dbConnection.query('SELECT * FROM products', function (error, results) {
@@ -198,6 +290,16 @@ admin_route.get('/products', function (req, res) {
             message: 'products list.' });
     });
 });
+
+/* Testing getting a specific product id information
+method: get
+url: http://localhost:3000/admin/product/3" 
+this will give you the product information with the id 3
+
+method:get 
+url: http://localhost:3000/admin/product/4 
+this will give you the product information with the id 4
+*/
 
 // Get a specific product ID from the database
 admin_route.get('/product/:id', (req, res)=>{
@@ -214,6 +316,43 @@ admin_route.get('/product/:id', (req, res)=>{
         //return res.send({ error: false, data: results[0], message: 'product retrieved' });
     })
 });
+
+/*  Test inserting a new product
+* if you can't send raw data check your headers tab in Postman
+https://stackoverflow.com/questions/58062558/postman-send-strange-response-for-raw-json-post-node-js
+
+method: post
+url: http://localhost:3000/admin/product
+header: Content-Type: application/json
+body: raw JSON
+
+{
+    "p_id":"8",
+    "p_name":"Elden Ring",
+    "rating":"4.9",
+    "age_restriction":"18",
+    "company_name":"FromSoftware",
+    "p_price":"1490",
+    "p_type":"Dark Fantasy",
+    "p_platform":"Console"
+}
+
+method: post
+url: http://localhost:3000/admin/product
+header: Content-Type: application/json
+body: raw JSON
+
+{
+    "p_id":"9",
+    "p_name":"Dark Soul 3",
+    "rating":"4.7",
+    "age_restriction":"18",
+    "company_name":"FromSoftware",
+    "p_price":"1500",
+    "p_type":"Dark Fantasy",
+    "p_platform":"Console"
+}
+*/
 
 // Insert a new product
 admin_route.post('/product', (req, res)=>{
@@ -238,6 +377,43 @@ admin_route.post('/product', (req, res)=>{
     })
 });
 
+/*  Test updating an existing product
+* if you can't send raw data check your headers tab in Postman
+https://stackoverflow.com/questions/58062558/postman-send-strange-response-for-raw-json-post-node-js
+
+method: post
+url: http://localhost:3000/admin/product
+header: Content-Type: application/json
+body: raw JSON
+
+{
+    "p_id":"8",
+    "p_name":"Elden Ring",
+    "rating":"4.9",
+    "age_restriction":"18",
+    "company_name":"Bandai Namco Entertainment",
+    "p_price":"1490",
+    "p_type":"Dark Fantasy",
+    "p_platform":"Console"
+}
+
+method: post
+url: http://localhost:3000/admin/product
+header: Content-Type: application/json
+body: raw JSON
+
+{
+    "p_id":"9",
+    "p_name":"Dark Soul 3",
+    "rating":"4.7",
+    "age_restriction":"18",
+    "company_name":"Bandai Namco Entertainment",
+    "p_price":"1500",
+    "p_type":"Dark Fantasy",
+    "p_platform":"Console"
+}
+*/
+
 // Update an existing entry
 admin_route.put('/product', (req, res)=>{
     let product = req.body;
@@ -254,6 +430,16 @@ admin_route.put('/product', (req, res)=>{
         //return res.send({error: false, data: results.affectedRows, message: 'User has been updated successfully.'})
     })
 });
+
+/* Testing delete a specific product id 
+method: delete
+url: http://localhost:3000/admin/product/8" 
+this will delete a product with the id 8
+
+method:get 
+url: http://localhost:3000/admin/product/9
+this will delete a product with the id 9
+*/
 
 // Delete an exisiting entry
 admin_route.delete('/product/:id', (req, res)=>{
