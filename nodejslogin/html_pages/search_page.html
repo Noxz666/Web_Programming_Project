@@ -354,14 +354,16 @@ var Data = [];
 		for(let nA = 0; nA < Responding.data.length; nA++)
 		{   
 			Data.push(Responding.data[nA].Product_ID); 
-			Data.push(Responding.data[nA].Product_name);
-			Data.push(Responding.data[nA].Rating );
+			Data.push(Responding.data[nA].Product_name); 	
+			Data.push(Responding.data[nA].Rating); 			
+			Data.push(Responding.data[nA].Rating);
 			Data.push(Responding.data[nA].Age_Restriction);
 			Data.push(Responding.data[nA].Company_name);
 			Data.push(Responding.data[nA].Product_Price);
 			Data.push(Responding.data[nA].Product_type);
 			Data.push(Responding.data[nA].Product_spec);
 		}
+		console.log(Data)
 
 	})
 	.catch((err) => console.log(err));	
