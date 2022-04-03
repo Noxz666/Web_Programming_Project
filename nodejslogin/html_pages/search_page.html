@@ -150,6 +150,8 @@
 	{
 		/*Note Cr. Aj.jidapa & stackoverflow form basicly, form by default it will use get method so the best way to re-check error before send data to server is 
 		Have some fuction here and check data before send it (use false as Halt Function until it correct so swap it to be true)*/
+
+		//Until this time is seem still no XD
 		return false;
 	}
 
@@ -170,27 +172,24 @@
 			if(document.getElementById("tags").value == "NULL")			
 			{
 				alert("Please Select you tags before searching!");
-				alert(Tag);
+				// alert(Tag);
 			}
 			else if (document.getElementById("tags").value != "NULL")
 			{
+				//When the user searching the data this code will be import All Data to the HTML and used it to check Word byword that is the same as the data or not
+				//After that use document.getElementById("Respond").innerHTML to show the data user want to see!
 				fetch('/search/FindAll' , {       
 				})
 				.then(res => res.json())
 				.then((Responding) => {
-					console.log(Responding);             
-					console.log(Responding.data.length); 
-					console.log(Tag); 
-					console.log(Response); 
+
+					// console.log(Responding);             
+					// console.log(Responding.data.length); 
+					// console.log(Tag); 
+					// console.log(Response); 
 
 					document.getElementById("Respond").innerHTML = " ";        
-					// for(let nA = 0; nA < Responding.data.length; nA++)
-					// {
-					// 	//`Product_ID`, `Product_name`, `Rating`, `Age_Restriction`, `Company_name`, `Product_Price`, `Product_type`, `Product_Spec`                 
-					// 	document.getElementById("Respond").innerHTML += "<table>" + "<tr>" + "<th> Product_ID </th>" + "<th> Product_name </th>" + "<th> Rating </th>" + "<th> Age_Restriction </th>" +"<th> Company_name</th>" + "<th> Product_Price </th>" + "<th> Product_type </th>" + "<th> Product_Spec </th>" + "<tr>" 
-					// 	+ "<tr>" + "<td>" + Responding.data[nA].Product_ID + "<td>" + "<td>" + Responding.data[nA].Product_name + "<td>" + "<td>" + Responding.data[nA].Rating + "<td>" + "<td>" + Responding.data[nA].Age_Restriction + "<td>" + "<td>" + Responding.data[nA].Company_name + "<td>" + "<td>" + Responding.data[nA].Product_Price + "<td>" +"<td>" + Responding.data[nA].Product_type+ "<td>" +"<td>" + Responding.data[nA].Product_Spec + "<td>" + "<tr>" + "</table>";
-							 
-					// }
+				
 					for(let nA = 0; nA < Responding.data.length; nA++)
 					{   
 						if(Tag == "All")  
@@ -341,7 +340,33 @@
 }
 /* Data in Auto Complete - Lazy to create A-Z so if you want do it!*/
 
-var Data = ["A Bastard's Tale (PC)","battlefield 2042 (PC)","C.A.T.S. - Carefully Attempting not To Screw up (PC)",'Doom (PC)',"E.T (PC)","five night at freddy 2(PC)","Gabriels Worlds The Adventure (PC)","Hell blade (PC)","I Am Setsuna (PC)",'Jagged Alliance: Gold Edition (PC)',"Minecraft (PC)","Test right Ha I got you!","Use Enter to Submit!!!!!"];
+//When user searching the data this code will be import All Data to the html and used it to check Word by word that are the same with the data or not
+
+var Data = [];
+//Use for import data to Data array for using auto searching
+	fetch('/search/FindAll' , {       
+	})
+	.then(res => res.json())
+	.then((Responding) => {
+
+	document.getElementById("Respond").innerHTML = " ";        
+				
+		for(let nA = 0; nA < Responding.data.length; nA++)
+		{   
+			Data.push(Responding.data[nA].Product_ID); 
+			Data.push(Responding.data[nA].Product_name);
+			Data.push(Responding.data[nA].Rating );
+			Data.push(Responding.data[nA].Age_Restriction);
+			Data.push(Responding.data[nA].Company_name);
+			Data.push(Responding.data[nA].Product_Price);
+			Data.push(Responding.data[nA].Product_type);
+			Data.push(Responding.data[nA].Product_spec);
+		}
+
+	})
+	.catch((err) => console.log(err));	
+
+
 
 autocomplete(document.getElementById("Find"), Data);		
 
