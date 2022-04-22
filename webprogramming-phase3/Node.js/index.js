@@ -15,6 +15,7 @@ const port = 3001;
 //     method: 'GET,POST,PUT,DELETE'
 // };
 // router.use(cors(corsOptions));
+router.use(cors());
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
 
@@ -45,11 +46,23 @@ connection.connect(function(err)
 router.get("/AllData", function (req, res){    
     connection.query('SELECT * FROM products', function (error, results) {
         if (error) throw error;
-        return res.send({ 
-            error: false, 
-            data: results
-           });
+        return res.send(results);
     });
+});
+
+router.post('/Searchtype', (req, res) => { //SELECT BY Category
+    let Product_Category = req.body.search.Product_Category;
+    let Product = req.body.search;
+    console.log(Product);
+   
+    let sql = "SELECT * FROM Product_info WHERE Product_Category = ?";
+    connection.query(sql, [Product.Product_Category], (error, results, fields) => {
+        if (!error) {
+            res.send(results);
+        } else {
+            res.send(error);
+        }
+    })
 });
 
 
@@ -58,20 +71,3 @@ router.listen(3001, function(){
     console.log("BackEnd now has been Working");
 });
 
-
-function CallData()
-{
-    var Sqldata = [];
-    router.get("/AllData", function (req, res){    
-        connection.query('SELECT * FROM products', function (error, results) {
-            if (error) throw error;
-            if (!error) Sqldata = res;
-            return res.send({ 
-                error: false, 
-                data: results
-               });
-        });
-    });
-
-   return Sqldata; 
-}

@@ -7,11 +7,11 @@ import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
 import { useState } from "react";
 
-import DataJSON from '../../Data.json';
+//import DataJSON from '../../Data.json';
 
 function CheckingSearch(data,Tag,KeySearch)
 {   
-    var CurrentResult = [];        
+    var CurrentResult = [];            
     for(let nA = 0; nA < data.length; nA++)
     {           
         if(Tag == "All")  
@@ -51,56 +51,41 @@ function CheckingSearch(data,Tag,KeySearch)
             CurrentResult.push(data[nA]);
         }         
     }
+    console.log(data);
+    console.log(data.length);
     console.log(CurrentResult);
-    return (
-        <Table striped bordered hover>
-        <thead>
-        <tr>               
-            <th>Product_ID</th>
-            <th>Product_Name</th>
-            <th>Rating</th>
-            <th>Age_restriction</th>
-            <th>Company_name</th>
-            <th>Product_price</th>
-            <th>Product_type</th>
-            <th>Product_platform </th>
-        </tr>
-        </thead>
-        <tbody>
-            {CurrentResult.map(obj => {
-            return (
-                <tr>                   
-                  <td>{obj.p_id}</td>
-                    <td>{obj.p_name}</td>  
-                    <td>{obj.rating}</td>  
-                    <td>{obj.age_restriction}</td>  
-                    <td>{obj.company_name}</td>  
-                    <td>{obj.p_price}</td>  
-                    <td>{obj.p_type}</td>  
-                    <td>{obj.p_platform}</td>                                      
-                </tr>
-            );
-            })}                                     
-        </tbody>
-    </Table>
-    )
+    return CurrentResult;        
+   
 }
 
 function SearchFrom () {     
 
     const [KeySearch, setKeySearch] = useState("");
-    const [Tag, setTag] = useState("");        
-    var Show = [];    
-
+    const [Tag, setTag] = useState("");    
+    const [Data,setData] = useState([]);                
     const handleSubmit = (event) => {
         event.preventDefault();
 
         // console.log(DataJSON);
         // console.log("KeySearch: "+KeySearch);
-        // console.log("Tag: "+ Tag);                           
-        
-                
-        Show = CheckingSearch(DataJSON,Tag,KeySearch);               
+        // console.log("Tag: "+ Tag); 
+        fetch("http://localhost:3001/AllData",
+        {
+            method: 'GET',
+            headers : { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+            }
+    
+        })       
+        .then((res) => res.json())
+        .then((AllData) => 
+        {             
+            console.log(AllData);
+            setData(CheckingSearch(AllData,Tag,KeySearch));                  
+            console.log(Data);
+        })  
+                                                                            
     }                        
     return (
     <div className="Search_page">   
@@ -133,7 +118,37 @@ function SearchFrom () {
                 <Button variant="outline-success" type="submit">Search</Button>
         </Form>
         <br></br><br></br><br></br>
-        {CheckingSearch(DataJSON,Tag,KeySearch)}       
+        <Table striped bordered hover>
+            <thead>
+            <tr>               
+                <th>Product_ID</th>
+                <th>Product_Name</th>
+                <th>Rating</th>
+                <th>Age_restriction</th>
+                <th>Company_name</th>
+                <th>Product_price</th>
+                <th>Product_type</th>
+                <th>Product_platform </th>
+            </tr>
+            </thead>
+            <tbody>
+                {Data.map(obj => {
+                return (
+                    <tr>                   
+                    <td>{obj.p_id}</td>
+                        <td>{obj.p_name}</td>  
+                        <td>{obj.rating}</td>  
+                        <td>{obj.age_restriction}</td>  
+                        <td>{obj.company_name}</td>  
+                        <td>{obj.p_price}</td>  
+                        <td>{obj.p_type}</td>  
+                        <td>{obj.p_platform}</td>                                      
+                    </tr>
+                );
+                })}                                     
+            </tbody>
+        </Table>    
+               
     </div>    
     );
 }
