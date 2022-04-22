@@ -1,0 +1,65 @@
+[   
+    {
+        "p_id" : 1,
+        "p_name" : "Succubus", 
+        "rating" : 4.1,
+        "age_restriction" : 18,
+        "company_name" : "MadHouse_studio",
+        "p_price" : 250,
+        "p_type" : "Blood",
+        "p_platform":"Console"
+    },
+    {   
+        "p_id" : 2,
+        "p_name" : "Total War WarhammerII", 
+        "rating" : 4.7,
+        "age_restriction" : 18,
+        "company_name" : "SEGA",
+        "p_price" : 1200,
+        "p_type" : "Fighting",
+        "p_platform":"Console"
+    },  
+    {
+        "p_id" : 3,
+        "p_name" : "Heros Hours", 
+        "rating" : 3.9,
+        "age_restriction" : 12,
+        "company_name" : "Indie_Software",
+        "p_price" : 90,
+        "p_type" : "Fighting",
+        "p_platform":"Moblie"
+    },
+    {   
+        "p_id" : 4,
+        "p_name" : "Sid Meier s Civilization VI", 
+        "rating" : 4.6,
+        "age_restriction" : 12,
+        "company_name" : "2K_studio",
+        "p_price" : 300,
+        "p_type" : "Turn-base",
+        "p_platform":"Console"
+    },
+    {   
+        "p_id" : 5,
+        "p_name" : "Pixel Game Maker MV", 
+        "rating" : 4.2,
+        "age_restriction" : 9,
+        "company_name" : "KADOKAWA",
+        "p_price" : 1200,
+        "p_type" : "RPG",
+        "p_platform":"Console"
+    },
+    {   
+        "p_id" : 6,
+        "p_name" : "Boba App", 
+        "rating" : 3.1,
+        "age_restriction" : 5,
+        "company_name" : "KADOKAWA",
+        "p_price" : 150,
+        "p_type" : "RPG",
+        "p_platform":"Console"
+    }      
+]
+
+
+

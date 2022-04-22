@@ -85,7 +85,7 @@ user_route.get('/search', function (req, res){
 
 //Use for geting data from SQL Database
 user_route.get('/search/FindAll', function (req, res){    
-    dbConnection.query('SELECT * FROM Product', function (error, results) {
+    dbConnection.query('SELECT * FROM products', function (error, results) {
         if (error) throw error;
         return res.send({ 
             error: false, 
@@ -518,4 +518,4 @@ app.use((req, res, next) => {
  /* You can also change to the error HTML page */
 })
 
-app.listen(3000);
+app.listen(3005);

@@ -49,14 +49,14 @@
 					<select id="tags">
 						<option value="NULL">Please select your tag</option>
 						<option value="All">All Data</option>
-						<option value="Product_ID">Product_ID</option>
-						<option value="Product_name">Product_name</option>
-						<option value="Rating">Rating</option>
-						<option value="Age_Restriction">Age_Restriction</option>
-						<option value="Company_name">Company_name</option>
-						<option value="Product_Price">Product_Price</option>
-						<option value="Product_type">Product_type</option>
-						<option value="Product_Spec">Product_Spec</option>
+						<option value="p_id">Product_id</option>
+						<option value="p_name">Product_name</option>
+						<option value="rating">Rating</option>
+						<option value="age_restriction">Age_restriction</option>
+						<option value="company_name">Company_name</option>
+						<option value="p_price">Product_price</option>
+						<option value="p_type">Product_type</option>
+						<option value="p_platform">Product_platform</option>
 				  </select>
 				</p>
 				<br><br>
@@ -183,10 +183,10 @@
 				.then(res => res.json())
 				.then((Responding) => {
 
-					// console.log(Responding);             
-					// console.log(Responding.data.length); 
-					// console.log(Tag); 
-					// console.log(Response); 
+					console.log(Responding);             
+					console.log(Responding.data.length); 
+					console.log(Tag);
+					
 
 					document.getElementById("Respond").innerHTML = " ";        
 				
@@ -194,39 +194,40 @@
 					{   
 						if(Tag == "All")  
 						{
-							document.getElementById("Respond").innerHTML += "<div class='Result'> <li>" + Responding.data[nA].Product_ID + " " + Responding.data[nA].Product_name + " " +  Responding.data[nA].Rating + " "  + Responding.data[nA].Age_Restriction + " " + Responding.data[nA].Company_name + " " + Responding.data[nA].Product_Price + " " + Responding.data[nA].Product_type+ " " + Responding.data[nA].Product_spec + " " + "</li> <br> </div>";
+							console.log(Responding.data[nA].p_name);
+							document.getElementById("Respond").innerHTML += "<div class='Result'> <li>" + Responding.data[nA].p_id + " " + Responding.data[nA].p_name + " " +  Responding.data[nA].rating + " "  + Responding.data[nA].age_restriction + " " + Responding.data[nA].company_name + " " + Responding.data[nA].p_price + " " + Responding.data[nA].p_type+ " " + Responding.data[nA].p_platform + " " + "</li> <br> </div>";
 						}      												
-						if(Tag == "Product_ID" && Result == Responding.data[nA].Product_ID )     
+						if(Tag == "p_id" && Result == Responding.data[nA].p_id )     
 						{
-							document.getElementById("Respond").innerHTML += "<div class='Result'> <li>" + Responding.data[nA].Product_ID + " " + Responding.data[nA].Product_name + " " +  Responding.data[nA].Rating + " "  + Responding.data[nA].Age_Restriction + " " + Responding.data[nA].Company_name + " " + Responding.data[nA].Product_Price + " " + Responding.data[nA].Product_type+ " " + Responding.data[nA].Product_spec + " " + "</li> <br> </div>";
+							document.getElementById("Respond").innerHTML += "<div class='Result'> <li>" + Responding.data[nA].p_id + " " + Responding.data[nA].p_name + " " +  Responding.data[nA].rating + " "  + Responding.data[nA].age_restriction + " " + Responding.data[nA].company_name + " " + Responding.data[nA].p_price + " " + Responding.data[nA].p_type+ " " + Responding.data[nA].p_platform + " " + "</li> <br> </div>";
 						}  
-						if(Tag == "Product_name" && Result == Responding.data[nA].Product_name )     
+						if(Tag == "p_name" && Result == Responding.data[nA].p_name )     
 						{
-							document.getElementById("Respond").innerHTML += "<div class='Result'> <li>" + Responding.data[nA].Product_ID + " " + Responding.data[nA].Product_name + " " +  Responding.data[nA].Rating + " "  + Responding.data[nA].Age_Restriction + " " + Responding.data[nA].Company_name + " " + Responding.data[nA].Product_Price + " " + Responding.data[nA].Product_type+ " " + Responding.data[nA].Product_spec + " " + "</li> <br> </div>";
+							document.getElementById("Respond").innerHTML += "<div class='Result'> <li>" + Responding.data[nA].p_id + " " + Responding.data[nA].p_name + " " +  Responding.data[nA].rating + " "  + Responding.data[nA].age_restriction + " " + Responding.data[nA].company_name + " " + Responding.data[nA].p_price + " " + Responding.data[nA].p_type+ " " + Responding.data[nA].p_platform + " " + "</li> <br> </div>";
 						}  
-						if(Tag == "Rating" && Result == Responding.data[nA].Rating )     
+						if(Tag == "rating" && Result == Responding.data[nA].rating )     
 						{
-							document.getElementById("Respond").innerHTML += "<div class='Result'> <li>" + Responding.data[nA].Product_ID + " " + Responding.data[nA].Product_name + " " +  Responding.data[nA].Rating + " "  + Responding.data[nA].Age_Restriction + " " + Responding.data[nA].Company_name + " " + Responding.data[nA].Product_Price + " " + Responding.data[nA].Product_type+ " " + Responding.data[nA].Product_spec + " " + "</li> <br> </div>";
+							document.getElementById("Respond").innerHTML += "<div class='Result'> <li>" + Responding.data[nA].p_id + " " + Responding.data[nA].p_name + " " +  Responding.data[nA].rating + " "  + Responding.data[nA].age_restriction + " " + Responding.data[nA].company_name + " " + Responding.data[nA].p_price + " " + Responding.data[nA].p_type+ " " + Responding.data[nA].p_platform + " " + "</li> <br> </div>";
 						}  
-						if(Tag == "Age_Restriction" && Result == Responding.data[nA].Age_Restriction )     
+						if(Tag == "age_restriction" && Result == Responding.data[nA].age_restriction )     
 						{
-							document.getElementById("Respond").innerHTML += "<div class='Result'> <li>" + Responding.data[nA].Product_ID + " " + Responding.data[nA].Product_name + " " +  Responding.data[nA].Rating + " "  + Responding.data[nA].Age_Restriction + " " + Responding.data[nA].Company_name + " " + Responding.data[nA].Product_Price + " " + Responding.data[nA].Product_type+ " " + Responding.data[nA].Product_spec + " " + "</li> <br> </div>";
+							document.getElementById("Respond").innerHTML += "<div class='Result'> <li>" + Responding.data[nA].p_id + " " + Responding.data[nA].p_name + " " +  Responding.data[nA].rating + " "  + Responding.data[nA].age_restriction + " " + Responding.data[nA].company_name + " " + Responding.data[nA].p_price + " " + Responding.data[nA].p_type+ " " + Responding.data[nA].p_platform + " " + "</li> <br> </div>";
 						}  
-						if(Tag == "Company_name" && Result == Responding.data[nA].Company_name )     
+						if(Tag == "company_name" && Result == Responding.data[nA].company_name )     
 						{
-							document.getElementById("Respond").innerHTML += "<div class='Result'> <li>" + Responding.data[nA].Product_ID + " " + Responding.data[nA].Product_name + " " +  Responding.data[nA].Rating + " "  + Responding.data[nA].Age_Restriction + " " + Responding.data[nA].Company_name + " " + Responding.data[nA].Product_Price + " " + Responding.data[nA].Product_type+ " " + Responding.data[nA].Product_spec + " " + "</li> <br> </div>";
+							document.getElementById("Respond").innerHTML += "<div class='Result'> <li>" + Responding.data[nA].p_id + " " + Responding.data[nA].p_name + " " +  Responding.data[nA].rating + " "  + Responding.data[nA].age_restriction + " " + Responding.data[nA].company_name + " " + Responding.data[nA].p_price + " " + Responding.data[nA].p_type+ " " + Responding.data[nA].p_platform + " " + "</li> <br> </div>";
 						}  
-						if(Tag == "Product_Price" && Result == Responding.data[nA].Product_Price )     
+						if(Tag == "p_price" && Result == Responding.data[nA].p_price )     
 						{
-							document.getElementById("Respond").innerHTML += "<div class='Result'> <li>" + Responding.data[nA].Product_ID + " " + Responding.data[nA].Product_name + " " +  Responding.data[nA].Rating + " "  + Responding.data[nA].Age_Restriction + " " + Responding.data[nA].Company_name + " " + Responding.data[nA].Product_Price + " " + Responding.data[nA].Product_type+ " " + Responding.data[nA].Product_spec + " " + "</li> <br> </div>";
+							document.getElementById("Respond").innerHTML += "<div class='Result'> <li>" + Responding.data[nA].p_id + " " + Responding.data[nA].p_name + " " +  Responding.data[nA].rating + " "  + Responding.data[nA].age_restriction + " " + Responding.data[nA].company_name + " " + Responding.data[nA].p_price + " " + Responding.data[nA].p_type+ " " + Responding.data[nA].p_platform + " " + "</li> <br> </div>";
 						}  
-						if(Tag == "Product_type" && Result == Responding.data[nA].Product_type )     
+						if(Tag == "p_type" && Result == Responding.data[nA].p_type )     
 						{
-							document.getElementById("Respond").innerHTML += "<div class='Result'> <li>" + Responding.data[nA].Product_ID + " " + Responding.data[nA].Product_name + " " +  Responding.data[nA].Rating + " "  + Responding.data[nA].Age_Restriction + " " + Responding.data[nA].Company_name + " " + Responding.data[nA].Product_Price + " " + Responding.data[nA].Product_type+ " " + Responding.data[nA].Product_spec + " " + "</li> <br> </div>";
+							document.getElementById("Respond").innerHTML += "<div class='Result'> <li>" + Responding.data[nA].p_id + " " + Responding.data[nA].p_name + " " +  Responding.data[nA].rating + " "  + Responding.data[nA].age_restriction + " " + Responding.data[nA].company_name + " " + Responding.data[nA].p_price + " " + Responding.data[nA].p_type+ " " + Responding.data[nA].p_platform + " " + "</li> <br> </div>";
 						} 
-						if(Tag == "Product_Spec" && Result == Responding.data[nA].Product_Spec)     
+						if(Tag == "p_platform" && Result == Responding.data[nA].p_platform)     
 						{
-							document.getElementById("Respond").innerHTML += "<div class='Result'> <li>" + Responding.data[nA].Product_ID + " " + Responding.data[nA].Product_name + " " +  Responding.data[nA].Rating + " "  + Responding.data[nA].Age_Restriction + " " + Responding.data[nA].Company_name + " " + Responding.data[nA].Product_Price + " " + Responding.data[nA].Product_type+ " " + Responding.data[nA].Product_spec + " " + "</li> <br> </div>";
+							document.getElementById("Respond").innerHTML += "<div class='Result'> <li>" + Responding.data[nA].p_id + " " + Responding.data[nA].p_name + " " +  Responding.data[nA].rating + " "  + Responding.data[nA].age_restriction + " " + Responding.data[nA].company_name + " " + Responding.data[nA].p_price + " " + Responding.data[nA].p_type+ " " + Responding.data[nA].p_platform + " " + "</li> <br> </div>";
 						} 				
 					}
 				})
@@ -342,31 +343,7 @@
 
 //When user searching the data this code will be import All Data to the html and used it to check Word by word that are the same with the data or not
 
-var Data = [];
-//Use for import data to Data array for using auto searching
-	fetch('/search/FindAll' , {       
-	})
-	.then(res => res.json())
-	.then((Responding) => {
-
-	document.getElementById("Respond").innerHTML = " ";        
-				
-		for(let nA = 0; nA < Responding.data.length; nA++)
-		{   
-			Data.push(Responding.data[nA].Product_ID); 
-			Data.push(Responding.data[nA].Product_name); 	
-			Data.push(Responding.data[nA].Rating); 			
-			Data.push(Responding.data[nA].Rating);
-			Data.push(Responding.data[nA].Age_Restriction);
-			Data.push(Responding.data[nA].Company_name);
-			Data.push(Responding.data[nA].Product_Price);
-			Data.push(Responding.data[nA].Product_type);
-			Data.push(Responding.data[nA].Product_spec);
-		}
-		console.log(Data)
-
-	})
-	.catch((err) => console.log(err));	
+var Data = ["Succubus","Total War WarhammerII","Heros Hours","Sid Meier s Civilization VI","Pixel Game Maker MV","Boba App"];
 
 
 

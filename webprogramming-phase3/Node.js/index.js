@@ -10,11 +10,11 @@ const router = express();
 dotenv.config();
 const port = 3001;
 
-let corsOptions = {
-    origin: 'htpp://localhost:3306',
-    method: 'GET,POST,PUT,DELETE'
-};
-router.use(cors(corsOptions));
+// let corsOptions = {
+//     origin: 'htpp://localhost:3000',
+//     method: 'GET,POST,PUT,DELETE'
+// };
+// router.use(cors(corsOptions));
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
 
@@ -33,6 +33,7 @@ connection.connect(function(err)
 {   
     if(err) throw err;
     console.log("Connected DB: "+ process.env.MYSQL_DATABASE + " at port " + 3001);
+    console.log("=========  Current Data  =========")
     connection.query('SELECT * FROM products', function (error, results) {
         if (error) throw error;
         console.log(results);
@@ -41,13 +42,13 @@ connection.connect(function(err)
 });
 
 //Use for geting data from SQL Database
-router.get('/search/FindAll', function (req, res){    
-    dbConnection.query('SELECT * FROM products', function (error, results) {
+router.get("/AllData", function (req, res){    
+    connection.query('SELECT * FROM products', function (error, results) {
         if (error) throw error;
         return res.send({ 
             error: false, 
-            data: results, 
-            message: 'users list.' });
+            data: results
+           });
     });
 });
 
@@ -58,12 +59,19 @@ router.listen(3001, function(){
 });
 
 
-    
+function CallData()
+{
+    var Sqldata = [];
+    router.get("/AllData", function (req, res){    
+        connection.query('SELECT * FROM products', function (error, results) {
+            if (error) throw error;
+            if (!error) Sqldata = res;
+            return res.send({ 
+                error: false, 
+                data: results
+               });
+        });
+    });
 
-
-
-
-
-
-
-
+   return Sqldata; 
+}
