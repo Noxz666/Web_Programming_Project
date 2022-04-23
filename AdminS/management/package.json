@@ -2,9 +2,9 @@
   "name": "manage",
   "version": "1.0.0",
   "description": "manage.js",
-  "main": "management.js",
+  "main": "index.js",
   "scripts": {
-    "start": "nodemon management.js"
+    "start": "nodemon index.js"
   },
   "author": "Patiphan Chan",
   "license": "ISC",
