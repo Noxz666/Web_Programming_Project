@@ -22,7 +22,7 @@ var connection = mysql.createConnection({
    connection.connect(function(err)
 {   
     if(err) throw err;
-    console.log("Connected DB: "+ process.env.MYSQL_DATABASE + " at port " + 3001);
+    console.log("Connected DB: "+ process.env.DB_name + " at port " + 3001);
     console.log("=========  Current Data  =========")
     connection.query('SELECT * FROM user_dat', function (error, results) {
         if (error) throw error;
