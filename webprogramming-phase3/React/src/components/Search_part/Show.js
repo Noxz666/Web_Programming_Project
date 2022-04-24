@@ -20,6 +20,7 @@ class ProductView extends React.Component {
         <img height="500"  src="https://i.imgur.com/GmxglHl.png"></img>
         <Table striped bordered hover>
             <thead>
+            {/* Table row name */}
             <tr>               
                 <th>Product_ID</th>
                 <th>Product_Name</th>
@@ -31,7 +32,8 @@ class ProductView extends React.Component {
                 <th>Product_platform </th>                
             </tr>
             </thead>
-            <tbody>                               
+            <tbody>
+              {/* Output from the database of that user */}                              
                 <tr>                   
                     <td>{Data.p_id}</td>
                     <td>{Data.p_name}</td>  

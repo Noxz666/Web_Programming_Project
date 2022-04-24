@@ -7,7 +7,7 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const router = express();
 
-dotenv.config();
+dotenv.config({ path: path.join(__dirname, './.env')});
 const port = 3001;
 
 // let corsOptions = {

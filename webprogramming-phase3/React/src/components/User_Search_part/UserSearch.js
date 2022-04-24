@@ -53,7 +53,7 @@ function CheckingSearch(data,Tag,KeySearch)
 
 function SearchFrom () {  
     
-    
+    //useState as a React-hook for storing and update the values
     //Handle keyword
     const [KeySearch, setKeySearch] = useState("");
     const [Tag, setTag] = useState("");    
@@ -66,7 +66,7 @@ function SearchFrom () {
     const [User_NickName, setNickName] = useState("");    
     const [User_Email, setEmail] = useState("");    
 
-    const [SelctedID_Data,setSelctedID_Data] = useState([{}]);
+    const [SelectedID_Data,setSelectedID_Data] = useState([{}]);
     
     //Handle with card pop-up (React-hook)
     //Insert
@@ -219,8 +219,8 @@ function SearchFrom () {
                     .then(response => response.json())
                     .then(response => {
                         console.log(response);
-                        setSelctedID_Data(response);
-                        console.log(SelctedID_Data);
+                        setSelectedID_Data(response);
+                        console.log(SelectedID_Data);
                     })
                     .catch((error) => {
                         console.error(error);
@@ -268,6 +268,7 @@ function SearchFrom () {
             </tr>
             </thead>
             <tbody>
+                {/* Using callback function of the data object */}
                 {Data.map(obj => {
                 return (
                     <tr>                   
@@ -294,7 +295,9 @@ function SearchFrom () {
         <div className="d-grid gap-2">       
             <Button variant="success" size="lg" onClick={open_Insert}>Insert</Button>
         </div>
-        {/* Displaying Insert as a card as an input to the database  */}
+
+        {/* Using Modal */}
+        {/* Displaying Insert as a card as an input to the database */}
         <Modal_Insert>
             <Card style={{ width:'240 rem'}} border="success">
                 <Card.Body>
@@ -331,6 +334,7 @@ function SearchFrom () {
                 </Card.Body>
             </Card>            
         </Modal_Insert> 
+
         {/* Displaying update as a card where admin has to get the matching UserID to update that user */}
         <Modal_Update>
             <Card style={{ width: '18rem' }} border="warning">
@@ -368,6 +372,7 @@ function SearchFrom () {
                 </Card.Body>
             </Card>            
         </Modal_Update>
+        
         {/* Displaying Delete as a card where the admin can delete user by UserID */}
         <Modal_Delete>
             <Card style={{ width: '18rem' }} border="danger">
