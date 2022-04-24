@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Button from 'react-bootstrap/Button'
 import Table from 'react-bootstrap/Table';
-import Container from 'react-bootstrap/Container';
 
 import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
@@ -12,10 +11,10 @@ import Card from 'react-bootstrap/Card'
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import {Link} from "react-router-dom";
 
-import {LinkContainer} from 'react-router-bootstrap';
 
 
 //Potato Search
+//The result of that search will be send to database query
 function CheckingSearch(data,Tag,KeySearch)
 {   
     var CurrentResult = [];            
@@ -55,12 +54,12 @@ function CheckingSearch(data,Tag,KeySearch)
 function SearchFrom () {  
     
     
-    //Handel keyword
+    //Handle keyword
     const [KeySearch, setKeySearch] = useState("");
     const [Tag, setTag] = useState("");    
     const [Data,setData] = useState([]); 
     
-    //CRUD From handel event
+    //CRUD Handle Command
     const [CRUD_type, setCRUD_type] = useState("");
     const [User_ID, setID] = useState("");
     const [User_name, setUsername] = useState("");    
@@ -69,29 +68,24 @@ function SearchFrom () {
 
     const [SelctedID_Data,setSelctedID_Data] = useState([{}]);
     
-    //Handel with card pop-up (React-hook)
+    //Handle with card pop-up (React-hook)
+    //Insert
     const [Modal_Insert, open_Insert, close_Insert] = useModal('root', {
         preventScroll: true,
         closeOnOverlayClick: false
     });
-
+    //Update
     const [Modal_Update, open_Update, close_Update] = useModal('root', {
         preventScroll: true,
         closeOnOverlayClick: false
     });
-
+    //Delete
     const [Modal_Delete, open_Delete, close_Delete] = useModal('root', {
         preventScroll: true,
         closeOnOverlayClick: false
     });
 
-    const [Modal_Info, open_Info, close_Info] = useModal('root', {
-        preventScroll: true,
-        closeOnOverlayClick: false
-    });
-
-
-    //Handel Serach  
+    //Handle Serach  
     const handleSubmit = (event) => {
         event.preventDefault();
 
@@ -122,9 +116,11 @@ function SearchFrom () {
         event.preventDefault(); 
         console.log("CRUD_type: " + CRUD_type);       
         console.log(User_ID);
-        console.log(User_name);      
+        console.log(User_name); 
 
+        //Switch case for each CRUD type
         switch(CRUD_type) {
+            //CRUD Insert
             case '1':
                 fetch('http://localhost:3001/UserInsert', 
                 {
@@ -153,8 +149,8 @@ function SearchFrom () {
                         console.error(error);
                     });                
                 break;
+            //CRUD Update 
             case '2':
-                console.log("Fucked Update");
                 fetch('http://localhost:3001/UserUpdate', 
                 {
                     method: 'PUT',
@@ -178,7 +174,8 @@ function SearchFrom () {
                     .catch((error) => {
                         console.error(error);
                     });  
-                break;    
+                break;  
+            //CRUD Delete  
             case '3':   
                 fetch('http://localhost:3001/UserDelete', 
                 {
@@ -204,6 +201,7 @@ function SearchFrom () {
                         console.error(error);
                     });  
                 break;    
+            //CRUD Get
             case '4':
                 fetch('http://localhost:3001/UserAllData/:id', 
                 {
@@ -235,6 +233,7 @@ function SearchFrom () {
     <div className="Search_page">   
 
         <br></br><br></br><br></br>
+        {/* Form for search bar and criteria filter */}
         <Form className="d-flex" onSubmit={handleSubmit}>
                 <FormControl
                     type="search"
@@ -257,14 +256,15 @@ function SearchFrom () {
                 <Button variant="outline-success" type="submit">Search</Button>
         </Form>
         <br></br><br></br><br></br>
+        {/* Table for displaying the database */}
         <Table striped bordered hover>
             <thead>
             <tr>               
-                            <th>Username</th>
-                            <th>ID</th>
-                            <th>Nick Name</th>
-                            <th>Email</th>
-                            <th>Edit</th>
+                <th>Username</th>
+                <th>ID</th>
+                <th>Nick Name</th>
+                <th>Email</th>
+                <th>Edit</th>
             </tr>
             </thead>
             <tbody>
@@ -293,7 +293,8 @@ function SearchFrom () {
         </Table> 
         <div className="d-grid gap-2">       
             <Button variant="success" size="lg" onClick={open_Insert}>Insert</Button>
-        </div> 
+        </div>
+        {/* Displaying Insert as a card as an input to the database  */}
         <Modal_Insert>
             <Card style={{ width:'240 rem'}} border="success">
                 <Card.Body>
@@ -330,7 +331,7 @@ function SearchFrom () {
                 </Card.Body>
             </Card>            
         </Modal_Insert> 
-
+        {/* Displaying update as a card where admin has to get the matching UserID to update that user */}
         <Modal_Update>
             <Card style={{ width: '18rem' }} border="warning">
             <Card.Body>
@@ -367,7 +368,7 @@ function SearchFrom () {
                 </Card.Body>
             </Card>            
         </Modal_Update>
-
+        {/* Displaying Delete as a card where the admin can delete user by UserID */}
         <Modal_Delete>
             <Card style={{ width: '18rem' }} border="danger">
             <Card.Body>
