@@ -21,13 +21,18 @@ const navbar = () => {
                     <Nav.Link>Home</Nav.Link>
                 </LinkContainer>
 
-                <LinkContainer to="/login">
-                    <Nav.Link>Login</Nav.Link>
+                <LinkContainer to="/Search_User">
+                    <Nav.Link>Search User</Nav.Link>
                 </LinkContainer>
 
                 <LinkContainer to="/Search_page">
                     <Nav.Link>Product</Nav.Link>   
-                </LinkContainer>                                            
+                </LinkContainer> 
+
+                <LinkContainer to="/Login">
+                    <Nav.Link>Login</Nav.Link>
+                </LinkContainer>
+                                                           
             </Nav>            
           </Navbar.Collapse>
         </Container>

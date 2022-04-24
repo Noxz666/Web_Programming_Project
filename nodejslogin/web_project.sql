@@ -16,6 +16,13 @@ CREATE TABLE `Admin` (
 	email		varchar(100) NOT NULL
 );
 
+CREATE TABLE `user_data`(
+	Username		varchar(15),
+    UserID 			varchar(8)		PRIMARY KEY,
+    NickName 		varchar(20),
+    Email 			varchar(40)
+);
+
 INSERT INTO Users VALUES 
 (1, "CBT", "123456", "cbt@gmail.com"),
 (2, "ggez", "111111", "ggez@gmail.com"),
@@ -23,6 +30,12 @@ INSERT INTO Users VALUES
 
 INSERT INTO Admin VALUES
 (1, "admin", "admin", "beluga@gmail.com");
+
+INSERT INTO user_data
+VALUES	('Allah', '00000001', 'AllahAlpha', 'AllahProphecy@Universe.42'),
+		('Buddha', '00000002', 'BuddhaBeta', 'BuddhaPeace@Universe.42'),
+        ('Christ', '00000003', 'ChristCharlie', 'ChristRedeemer@Universe.42'),
+        ('Demon', '00000666', 'DemonDelta', 'DemonHell@Universe.42');
 
 CREATE TABLE `products`(
 	p_id			int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -53,3 +66,4 @@ INSERT INTO `products` (`p_id`, `p_name`, `rating`, `age_restriction`, `company_
 
 -- SELECT * FROM Users;
 SELECT * FROM products;
+SELECT * FROM user_data;
