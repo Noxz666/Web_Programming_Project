@@ -30,7 +30,7 @@ class ProductView extends React.Component {
             <tbody>                               
                 <tr>                   
                     <td>{Data.Username}</td>
-                    <td>{Data.ID}</td>  
+                    <td>{Data.UserID}</td>  
                     <td>{Data.NickName}</td>  
                     <td>{Data.Email}</td>       
                 </tr>                                    
